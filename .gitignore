@@ -162,4 +162,5 @@ cython_debug/
 config.yaml
 db_table_example.xlsx
 db/**
-UI/*.ui
+UI/**/*.ui
+UI/resources
