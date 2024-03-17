@@ -163,3 +163,4 @@ cython_debug/
 db_table_example.xlsx
 db/**
 UI/resources
+UI/*.ui
