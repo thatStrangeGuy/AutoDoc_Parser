@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>632</width>
+    <width>700</width>
     <height>122</height>
    </rect>
   </property>
@@ -174,6 +174,12 @@ QDialogButtonBox QPushButton:pressed {
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
     <widget class="QFrame" name="frame_9">
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>100</height>
+      </size>
+     </property>
      <property name="frameShape">
       <enum>QFrame::StyledPanel</enum>
      </property>
@@ -197,7 +203,7 @@ QDialogButtonBox QPushButton:pressed {
         </property>
         <layout class="QVBoxLayout" name="verticalLayout_2">
          <item>
-          <widget class="QLabel" name="label_9">
+          <widget class="QLabel" name="databaseRecordName_Label">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
              <horstretch>0</horstretch>
@@ -216,7 +222,7 @@ QDialogButtonBox QPushButton:pressed {
           </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="lineEdit_6">
+          <widget class="QLineEdit" name="databaseRecordName_Line">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
              <horstretch>1</horstretch>
@@ -244,7 +250,7 @@ QDialogButtonBox QPushButton:pressed {
         </property>
         <layout class="QVBoxLayout" name="verticalLayout_10">
          <item>
-          <widget class="QLabel" name="label_10">
+          <widget class="QLabel" name="databaseRecordIndType_Label">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
              <horstretch>0</horstretch>
@@ -263,7 +269,7 @@ QDialogButtonBox QPushButton:pressed {
           </widget>
          </item>
          <item>
-          <widget class="QComboBox" name="comboBox_4">
+          <widget class="QComboBox" name="databaseRecordIndType_ComboBox">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
              <horstretch>1</horstretch>
@@ -301,7 +307,7 @@ QDialogButtonBox QPushButton:pressed {
         </property>
         <layout class="QVBoxLayout" name="verticalLayout_11">
          <item>
-          <widget class="QLabel" name="label_11">
+          <widget class="QLabel" name="databaseRecordIndex_Label">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
              <horstretch>0</horstretch>
@@ -320,7 +326,7 @@ QDialogButtonBox QPushButton:pressed {
           </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="lineEdit_7">
+          <widget class="QLineEdit" name="databaseRecordIndex_lineEdit">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
              <horstretch>1</horstretch>
@@ -348,7 +354,7 @@ QDialogButtonBox QPushButton:pressed {
         </property>
         <layout class="QVBoxLayout" name="verticalLayout_12">
          <item>
-          <widget class="QLabel" name="label_12">
+          <widget class="QLabel" name="databaseRecordColumn_label">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
              <horstretch>0</horstretch>
@@ -367,7 +373,7 @@ QDialogButtonBox QPushButton:pressed {
           </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="lineEdit_8">
+          <widget class="QLineEdit" name="databaseRecordColumn_lineEdit">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
              <horstretch>1</horstretch>
@@ -395,7 +401,7 @@ QDialogButtonBox QPushButton:pressed {
         </property>
         <layout class="QVBoxLayout" name="verticalLayout_13">
          <item>
-          <widget class="QLabel" name="label_13">
+          <widget class="QLabel" name="databaseRecordKey_label">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
              <horstretch>0</horstretch>
@@ -414,7 +420,7 @@ QDialogButtonBox QPushButton:pressed {
           </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="lineEdit_9">
+          <widget class="QLineEdit" name="databaseRecordKey_lineEdit">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
              <horstretch>1</horstretch>
@@ -442,7 +448,7 @@ QDialogButtonBox QPushButton:pressed {
         </property>
         <layout class="QVBoxLayout" name="verticalLayout_14">
          <item>
-          <widget class="QLabel" name="label_14">
+          <widget class="QLabel" name="databaseRecordValType_label">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
              <horstretch>0</horstretch>
@@ -461,7 +467,7 @@ QDialogButtonBox QPushButton:pressed {
           </widget>
          </item>
          <item>
-          <widget class="QComboBox" name="comboBox_5">
+          <widget class="QComboBox" name="databaseRecordValType_comboBox">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
              <horstretch>1</horstretch>
@@ -499,7 +505,7 @@ QDialogButtonBox QPushButton:pressed {
         </property>
         <layout class="QVBoxLayout" name="verticalLayout_15">
          <item>
-          <widget class="QLabel" name="label_15">
+          <widget class="QLabel" name="databaseRecordValue_label">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
              <horstretch>0</horstretch>
@@ -518,12 +524,52 @@ QDialogButtonBox QPushButton:pressed {
           </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="lineEdit_10">
+          <widget class="QLineEdit" name="databaseRecordValue_lineEdit">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
              <horstretch>1</horstretch>
              <verstretch>2</verstretch>
             </sizepolicy>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QFrame" name="frame">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+          <horstretch>2</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_3">
+         <item>
+          <widget class="QPushButton" name="databaseRecordDelete_Button">
+           <property name="text">
+            <string/>
+           </property>
+           <property name="icon">
+            <iconset resource="resources/icons.qrc">
+             <normaloff>:/file_open/icons/icons8-delete-100.png</normaloff>:/file_open/icons/icons8-delete-100.png</iconset>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="databaseRecordSave_Button">
+           <property name="text">
+            <string/>
+           </property>
+           <property name="icon">
+            <iconset resource="resources/icons.qrc">
+             <normaloff>:/file_open/icons/icons8-save-100.png</normaloff>:/file_open/icons/icons8-save-100.png</iconset>
            </property>
           </widget>
          </item>
