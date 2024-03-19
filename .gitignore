@@ -163,4 +163,4 @@ config.yaml
 db_table_example.xlsx
 db/**
 UI/resources
-UI/*.ui
+UI/base_qt_ui/icons

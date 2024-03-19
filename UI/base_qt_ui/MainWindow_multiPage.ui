@@ -212,7 +212,7 @@ QDialogButtonBox QPushButton:pressed {
           <string/>
          </property>
          <property name="icon">
-          <iconset resource="resources/icons.qrc">
+          <iconset resource="icons.qrc">
            <normaloff>:/file_open/icons/icons8-excel.svg</normaloff>:/file_open/icons/icons8-excel.svg</iconset>
          </property>
          <property name="iconSize">
@@ -238,7 +238,7 @@ QDialogButtonBox QPushButton:pressed {
           <string/>
          </property>
          <property name="icon">
-          <iconset resource="resources/icons.qrc">
+          <iconset resource="icons.qrc">
            <normaloff>:/file_open/icons/icons8-database-100.png</normaloff>:/file_open/icons/icons8-database-100.png</iconset>
          </property>
          <property name="iconSize">
@@ -258,7 +258,7 @@ QDialogButtonBox QPushButton:pressed {
           <string/>
          </property>
          <property name="icon">
-          <iconset resource="resources/icons.qrc">
+          <iconset resource="icons.qrc">
            <normaloff>:/file_open/icons/icons8-word-100.png</normaloff>:/file_open/icons/icons8-word-100.png</iconset>
          </property>
          <property name="iconSize">
@@ -297,7 +297,7 @@ QDialogButtonBox QPushButton:pressed {
           <string/>
          </property>
          <property name="icon">
-          <iconset resource="resources/icons.qrc">
+          <iconset resource="icons.qrc">
            <normaloff>:/file_open/icons/icons8-settings-128.png</normaloff>:/file_open/icons/icons8-settings-128.png</iconset>
          </property>
          <property name="iconSize">
@@ -317,7 +317,7 @@ QDialogButtonBox QPushButton:pressed {
           <string/>
          </property>
          <property name="icon">
-          <iconset resource="resources/icons.qrc">
+          <iconset resource="icons.qrc">
            <normaloff>:/file_open/icons/icons8-exit-80.png</normaloff>:/file_open/icons/icons8-exit-80.png</iconset>
          </property>
          <property name="iconSize">
@@ -358,7 +358,7 @@ QDialogButtonBox QPushButton:pressed {
        <enum>Qt::NoContextMenu</enum>
       </property>
       <property name="currentIndex">
-       <number>3</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="xlsRawImport_Page">
        <layout class="QHBoxLayout" name="horizontalLayout_3">
@@ -398,7 +398,7 @@ QDialogButtonBox QPushButton:pressed {
                  <string>Raw Excel File Import</string>
                 </property>
                 <property name="icon">
-                 <iconset resource="resources/icons.qrc">
+                 <iconset resource="icons.qrc">
                   <normaloff>:/file_open/icons/icons8-excel.svg</normaloff>:/file_open/icons/icons8-excel.svg</iconset>
                 </property>
                </widget>
@@ -455,7 +455,7 @@ QDialogButtonBox QPushButton:pressed {
                     <string>Browse</string>
                    </property>
                    <property name="icon">
-                    <iconset resource="resources/icons.qrc">
+                    <iconset resource="icons.qrc">
                      <normaloff>:/file_open/icons/icons8-open-file.svg</normaloff>:/file_open/icons/icons8-open-file.svg</iconset>
                    </property>
                   </widget>
@@ -472,7 +472,7 @@ QDialogButtonBox QPushButton:pressed {
                     <string>Load</string>
                    </property>
                    <property name="icon">
-                    <iconset resource="resources/icons.qrc">
+                    <iconset resource="icons.qrc">
                      <normaloff>:/file_open/icons/icons8-download-60.png</normaloff>:/file_open/icons/icons8-download-60.png</iconset>
                    </property>
                   </widget>
@@ -563,7 +563,7 @@ QDialogButtonBox QPushButton:pressed {
                  <string>Database Dictionary Load</string>
                 </property>
                 <property name="icon">
-                 <iconset resource="resources/icons.qrc">
+                 <iconset resource="icons.qrc">
                   <normaloff>:/file_open/icons/icons8-json-file-100.png</normaloff>:/file_open/icons/icons8-json-file-100.png</iconset>
                 </property>
                 <property name="iconSize">
@@ -629,7 +629,7 @@ QDialogButtonBox QPushButton:pressed {
                        <string>Connect</string>
                       </property>
                       <property name="icon">
-                       <iconset resource="resources/icons.qrc">
+                       <iconset resource="icons.qrc">
                         <normaloff>:/file_open/icons/icons8-connect-100.png</normaloff>:/file_open/icons/icons8-connect-100.png</iconset>
                       </property>
                      </widget>
@@ -677,7 +677,7 @@ QDialogButtonBox QPushButton:pressed {
                        <string>Save</string>
                       </property>
                       <property name="icon">
-                       <iconset resource="resources/icons.qrc">
+                       <iconset resource="icons.qrc">
                         <normaloff>:/file_open/icons/icons8-save-100.png</normaloff>:/file_open/icons/icons8-save-100.png</iconset>
                       </property>
                      </widget>
@@ -700,7 +700,7 @@ QDialogButtonBox QPushButton:pressed {
                  <string>Edit DataBase</string>
                 </property>
                 <property name="icon">
-                 <iconset resource="resources/icons.qrc">
+                 <iconset resource="icons.qrc">
                   <normaloff>:/file_open/icons/icons8-database-100.png</normaloff>:/file_open/icons/icons8-database-100.png</iconset>
                 </property>
                 <property name="iconSize">
@@ -797,7 +797,7 @@ QDialogButtonBox QPushButton:pressed {
                     <string>Browse</string>
                    </property>
                    <property name="icon">
-                    <iconset resource="resources/icons.qrc">
+                    <iconset resource="icons.qrc">
                      <normaloff>:/file_open/icons/icons8-open-file.svg</normaloff>:/file_open/icons/icons8-open-file.svg</iconset>
                    </property>
                   </widget>
@@ -828,7 +828,7 @@ QPushButton:pressed {
                  <string>Parse to xls file</string>
                 </property>
                 <property name="icon">
-                 <iconset resource="resources/icons.qrc">
+                 <iconset resource="icons.qrc">
                   <normaloff>:/file_open/icons/icons8-export-excel-100.png</normaloff>:/file_open/icons/icons8-export-excel-100.png</iconset>
                 </property>
                 <property name="iconSize">
@@ -882,7 +882,7 @@ QPushButton:pressed {
               <string>Database Edit</string>
              </property>
              <property name="icon">
-              <iconset resource="resources/icons.qrc">
+              <iconset resource="icons.qrc">
                <normaloff>:/file_open/icons/icons8-database-100.png</normaloff>:/file_open/icons/icons8-database-100.png</iconset>
              </property>
             </widget>
@@ -930,7 +930,7 @@ QPushButton:pressed {
                  <string>Connect</string>
                 </property>
                 <property name="icon">
-                 <iconset resource="resources/icons.qrc">
+                 <iconset resource="icons.qrc">
                   <normaloff>:/file_open/icons/icons8-connect-100.png</normaloff>:/file_open/icons/icons8-connect-100.png</iconset>
                 </property>
                </widget>
@@ -947,7 +947,7 @@ QPushButton:pressed {
                  <string>Create</string>
                 </property>
                 <property name="icon">
-                 <iconset resource="resources/icons.qrc">
+                 <iconset resource="icons.qrc">
                   <normaloff>:/file_open/icons/icons8-add-database-100.png</normaloff>:/file_open/icons/icons8-add-database-100.png</iconset>
                 </property>
                </widget>
@@ -998,7 +998,7 @@ QPushButton:pressed {
                  <string>Save</string>
                 </property>
                 <property name="icon">
-                 <iconset resource="resources/icons.qrc">
+                 <iconset resource="icons.qrc">
                   <normaloff>:/file_open/icons/icons8-save-100.png</normaloff>:/file_open/icons/icons8-save-100.png</iconset>
                 </property>
                </widget>
@@ -1015,7 +1015,7 @@ QPushButton:pressed {
                  <string>Create</string>
                 </property>
                 <property name="icon">
-                 <iconset resource="resources/icons.qrc">
+                 <iconset resource="icons.qrc">
                   <normaloff>:/file_open/icons/icons8-insert-table-100.png</normaloff>:/file_open/icons/icons8-insert-table-100.png</iconset>
                 </property>
                </widget>
@@ -1097,7 +1097,7 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
              <x>0</x>
              <y>0</y>
              <width>680</width>
-             <height>396</height>
+             <height>362</height>
             </rect>
            </property>
            <layout class="QVBoxLayout" name="verticalLayout_22">
@@ -1106,6 +1106,17 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
             </item>
            </layout>
           </widget>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="databaseReOrder_Button">
+          <property name="text">
+           <string>Re-order Records</string>
+          </property>
+          <property name="icon">
+           <iconset resource="icons.qrc">
+            <normaloff>:/file_open/icons/icons8-sort-96.png</normaloff>:/file_open/icons/icons8-sort-96.png</iconset>
+          </property>
          </widget>
         </item>
        </layout>
@@ -1139,7 +1150,7 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
               <string>Excel File Import</string>
              </property>
              <property name="icon">
-              <iconset resource="resources/icons.qrc">
+              <iconset resource="icons.qrc">
                <normaloff>:/file_open/icons/icons8-excel.svg</normaloff>:/file_open/icons/icons8-excel.svg</iconset>
              </property>
             </widget>
@@ -1196,7 +1207,7 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
                  <string>Browse</string>
                 </property>
                 <property name="icon">
-                 <iconset resource="resources/icons.qrc">
+                 <iconset resource="icons.qrc">
                   <normaloff>:/file_open/icons/icons8-open-file.svg</normaloff>:/file_open/icons/icons8-open-file.svg</iconset>
                 </property>
                </widget>
@@ -1234,7 +1245,7 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
               <string>Word Template Import</string>
              </property>
              <property name="icon">
-              <iconset resource="resources/icons.qrc">
+              <iconset resource="icons.qrc">
                <normaloff>:/file_open/icons/icons8-microsoft-word-100.png</normaloff>:/file_open/icons/icons8-microsoft-word-100.png</iconset>
              </property>
             </widget>
@@ -1291,7 +1302,7 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
                  <string>Browse</string>
                 </property>
                 <property name="icon">
-                 <iconset resource="resources/icons.qrc">
+                 <iconset resource="icons.qrc">
                   <normaloff>:/file_open/icons/icons8-open-file.svg</normaloff>:/file_open/icons/icons8-open-file.svg</iconset>
                 </property>
                </widget>
@@ -1345,7 +1356,7 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
               <string>Word File Export</string>
              </property>
              <property name="icon">
-              <iconset resource="resources/icons.qrc">
+              <iconset resource="icons.qrc">
                <normaloff>:/file_open/icons/icons8-word-100.png</normaloff>:/file_open/icons/icons8-word-100.png</iconset>
              </property>
             </widget>
@@ -1409,7 +1420,7 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
                  <string>Browse</string>
                 </property>
                 <property name="icon">
-                 <iconset resource="resources/icons.qrc">
+                 <iconset resource="icons.qrc">
                   <normaloff>:/file_open/icons/icons8-open-file.svg</normaloff>:/file_open/icons/icons8-open-file.svg</iconset>
                 </property>
                </widget>
@@ -1465,7 +1476,7 @@ QPushButton:pressed {
            <string>Parse</string>
           </property>
           <property name="icon">
-           <iconset resource="resources/icons.qrc">
+           <iconset resource="icons.qrc">
             <normaloff>:/file_open/icons/icons8-move-through-64.png</normaloff>:/file_open/icons/icons8-move-through-64.png</iconset>
           </property>
           <property name="iconSize">
@@ -1529,7 +1540,7 @@ QPushButton:pressed {
               <string>Database Type</string>
              </property>
              <property name="icon">
-              <iconset resource="resources/icons.qrc">
+              <iconset resource="icons.qrc">
                <normaloff>:/file_open/icons/icons8-sql-90.png</normaloff>:/file_open/icons/icons8-sql-90.png</iconset>
              </property>
             </widget>
@@ -1613,7 +1624,7 @@ QPushButton:pressed {
               <string>Default Database</string>
              </property>
              <property name="icon">
-              <iconset resource="resources/icons.qrc">
+              <iconset resource="icons.qrc">
                <normaloff>:/file_open/icons/icons8-database-100.png</normaloff>:/file_open/icons/icons8-database-100.png</iconset>
              </property>
             </widget>
@@ -1655,7 +1666,7 @@ QPushButton:pressed {
                  <string>Create</string>
                 </property>
                 <property name="icon">
-                 <iconset resource="resources/icons.qrc">
+                 <iconset resource="icons.qrc">
                   <normaloff>:/file_open/icons/icons8-add-database-100.png</normaloff>:/file_open/icons/icons8-add-database-100.png</iconset>
                 </property>
                </widget>
@@ -1715,7 +1726,7 @@ QPushButton:pressed {
               <string>Connection String</string>
              </property>
              <property name="icon">
-              <iconset resource="resources/icons.qrc">
+              <iconset resource="icons.qrc">
                <normaloff>:/file_open/icons/icons8-connection-100.png</normaloff>:/file_open/icons/icons8-connection-100.png</iconset>
              </property>
             </widget>
@@ -1732,7 +1743,7 @@ QPushButton:pressed {
               <string>Generate Connection String</string>
              </property>
              <property name="icon">
-              <iconset resource="resources/icons.qrc">
+              <iconset resource="icons.qrc">
                <normaloff>:/file_open/icons/icons8-mechanistic-analysis-100.png</normaloff>:/file_open/icons/icons8-mechanistic-analysis-100.png</iconset>
              </property>
             </widget>
@@ -1768,7 +1779,7 @@ QPushButton:pressed {
                  <string>Test</string>
                 </property>
                 <property name="icon">
-                 <iconset resource="resources/icons.qrc">
+                 <iconset resource="icons.qrc">
                   <normaloff>:/file_open/icons/icons8-wrench-100.png</normaloff>:/file_open/icons/icons8-wrench-100.png</iconset>
                 </property>
                </widget>
@@ -1808,7 +1819,7 @@ QPushButton:pressed {
            <string>Save Config</string>
           </property>
           <property name="icon">
-           <iconset resource="resources/icons.qrc">
+           <iconset resource="icons.qrc">
             <normaloff>:/file_open/icons/icons8-save-100.png</normaloff>:/file_open/icons/icons8-save-100.png</iconset>
           </property>
          </widget>
@@ -1858,7 +1869,7 @@ QPushButton:pressed {
   </action>
  </widget>
  <resources>
-  <include location="resources/icons.qrc"/>
+  <include location="icons.qrc"/>
  </resources>
  <connections/>
 </ui>

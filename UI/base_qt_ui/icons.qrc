@@ -1,0 +1,34 @@
+<RCC>
+  <qresource prefix="file_open">
+    <file>icons/icons8-sort-96.png</file>
+    <file>icons/icons8-down-90.png</file>
+    <file>icons/icons8-up-90.png</file>
+    <file>icons/icons8-mechanistic-analysis-100.png</file>
+    <file>icons/icons8-wrench-100.png</file>
+    <file>icons/icons8-connection-100.png</file>
+    <file>icons/icons8-sql-90.png</file>
+    <file>icons/icons8-microsoft-word-100.png</file>
+    <file>icons/icons8-insert-table-100.png</file>
+    <file>icons/icons8-add-database-100.png</file>
+    <file>icons/icons8-edit-100.png</file>
+    <file>icons/icons8-add-100.png</file>
+    <file>icons/icons8-delete-100.png</file>
+    <file>icons/icons8-settings-128.png</file>
+    <file>icons/icons8-save-100.png</file>
+    <file>icons/icons8-connect-100.png</file>
+    <file>icons/icons8-database-100.png</file>
+    <file>icons/icons8-move-through-64.png</file>
+    <file>icons/icons8-exit-80.png</file>
+    <file>icons/icons8-word-100.png</file>
+    <file>icons/icons8-export-excel-100.png</file>
+    <file>icons/icons8-json-file-100.png</file>
+    <file>icons/icons8-curly-brackets-100.png</file>
+    <file>icons/file_open_FILL0_wght400_GRAD0_opsz24.svg</file>
+    <file>icons/on-button.png</file>
+    <file>icons/switch.png</file>
+    <file>icons/switch-on (1).png</file>
+    <file>icons/icons8-download-60.png</file>
+    <file>icons/icons8-excel.svg</file>
+    <file>icons/icons8-open-file.svg</file>
+  </qresource>
+</RCC>
