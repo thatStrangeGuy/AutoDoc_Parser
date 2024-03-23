@@ -30,3 +30,24 @@ def show_exit_dialog():
     elif msgbox.clickedButton() == reject:
         msgbox.close()
 
+
+def show_error_message(msg):
+    msgbox = QMessageBox()
+    msgbox.setWindowTitle("Error!")
+    icon = msgbox.Icon.Critical
+    msgbox.setIcon(icon)
+    title_icon = QIcon()
+    title_icon.addFile(u":/file_open/icons/icons8-error-64.png", QSize(), QIcon.Normal, QIcon.Off)
+    msgbox.setWindowIcon(title_icon)
+
+    with open(Path().absolute().joinpath('UI', 'style_main.css'), 'r') as style_file:
+        style = style_file.read()
+        style += '''\nQLabel{min-width:200 px; font-size: 12px;text-align:left;} QPushButton{ width:100px; font-size: 16px; }'''
+        msgbox.setStyleSheet(style)
+
+    msgbox.setText(f"OOPS!Something went wrong!")
+    msgbox.setDetailedText(f"Error!\n\n{msg}")
+    accept = msgbox.addButton("Ok", QMessageBox.ButtonRole.YesRole)
+    msgbox.exec()
+    if msgbox.clickedButton() == accept:
+        msgbox.close()

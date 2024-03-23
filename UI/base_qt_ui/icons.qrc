@@ -1,6 +1,7 @@
 <RCC>
   <qresource prefix="file_open">
     <file>icons/icons8-template-80.png</file>
+    <file>icons/icons8-error-64.png</file>
     <file>icons/icons8-exit-80_RED.png</file>
     <file>icons/icons8-sort-96.png</file>
     <file>icons/icons8-down-90.png</file>

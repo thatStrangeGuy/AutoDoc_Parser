@@ -865,7 +865,7 @@ class Ui_Parser_UI(object):
         self.scrollArea.setAlignment(Qt.AlignHCenter|Qt.AlignTop)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 642, 338))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 96, 26))
         self.verticalLayout_22 = QVBoxLayout(self.scrollAreaWidgetContents)
         self.verticalLayout_22.setObjectName(u"verticalLayout_22")
         self.databaseRecords_layout = QVBoxLayout()

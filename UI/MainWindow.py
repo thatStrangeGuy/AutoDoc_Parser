@@ -13,8 +13,11 @@ logger = logging.getLogger('app.MainWindowGUI')
 
 
 class MainWindow(QMainWindow):
+    ErrorMessage_Signal = Signal(str)
+
     def __init__(self):
         super(MainWindow, self).__init__()
+        self.raw_excel_df = None
         self.raw_xls_chosenColumn = ""
         self.raw_xls_filepath = ""
         self.ui = Ui_Parser_UI()
@@ -47,16 +50,25 @@ class MainWindow(QMainWindow):
 
     @Slot()
     def load_raw_excel(self):
-        path = Path(self.raw_xls_filepath)
-        columns = xls_controller.get_columns(path.absolute())
-        self.ui.columnList_ComboBox.clear()
-        for i in columns:
-            self.ui.columnList_ComboBox.addItem(i)
-        self.raw_xls_chosenColumn = self.ui.columnList_ComboBox.currentText()
+        path, message = file_controler.check_filepath(self.raw_xls_filepath, [".xls", ".xlsx"])
+        if path is None:
+            self.ErrorMessage_Signal.emit(message)
+            return
+        else:
+            self.raw_excel_df = xls_controller.excel_to_dataframe(path.absolute())
+            columns = self.raw_excel_df.columns.tolist()
+            self.ui.columnList_ComboBox.clear()
+            for i in columns:
+                self.ui.columnList_ComboBox.addItem(i)
+            self.raw_xls_chosenColumn = self.ui.columnList_ComboBox.currentText()
 
     @Slot()
     def raw_xls_column_choose(self):
         self.raw_xls_chosenColumn = self.ui.columnList_ComboBox.currentText()
+
+    @Slot(str)
+    def ErrorMessage(self, msg: str):
+        msgbox_controller.show_error_message(msg)
 
     def initialize_connections(self):
         self.ui.xlsRawFilePathBrowse_Button.clicked.connect(self.open_xls_raw_file)
@@ -84,4 +96,6 @@ class MainWindow(QMainWindow):
         )
 
         self.ui.xlsRawFilePathLoad_Button.clicked.connect(self.load_raw_excel)
+
+        self.ErrorMessage_Signal.connect(msgbox_controller.show_error_message)
         # self.ui.btn_close.clicked.connect(self.close_MainWindow)
