@@ -30,6 +30,8 @@ class MainWindow(QMainWindow):
 
         self.set_window_title_icon()
         self.initialize_connections()
+        self.ui.stackedWidget.setCurrentWidget(self.ui.xlsRawImport_Page)
+        self.refresh_page_data()
 
     def set_window_title_icon(self):
         title_icon = QIcon()
@@ -99,3 +101,16 @@ class MainWindow(QMainWindow):
 
         self.ErrorMessage_Signal.connect(msgbox_controller.show_error_message)
         # self.ui.btn_close.clicked.connect(self.close_MainWindow)
+
+        self.ui.stackedWidget.currentChanged.connect(self.refresh_page_data)
+
+    @Slot()
+    def refresh_page_data(self):
+        if self.ui.stackedWidget.currentWidget() == self.ui.xlsRawImport_Page:
+            print("Current page is xlsRawImport")  # TODO: Refreshing page if current page is xlsRawImport
+        elif self.ui.stackedWidget.currentWidget() == self.ui.databaseEdit_Page:
+            print("Current page is editing database")  # TODO: Refreshing page if current page is editing database
+        elif self.ui.stackedWidget.currentWidget() == self.ui.wordParseXls_page:
+            print("Current page is parse word")  # TODO: Refreshing page if current page is Word Parsing page
+        elif self.ui.stackedWidget.currentWidget() == self.ui.configEdit_Page:
+            print("Current page is config page")  # TODO: Refreshing page if current page is config editing page
