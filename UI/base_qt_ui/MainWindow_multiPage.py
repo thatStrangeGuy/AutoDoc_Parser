@@ -17,18 +17,18 @@ from PySide6.QtGui import (QAction, QBrush, QColor, QConicalGradient,
     QPainter, QPalette, QPixmap, QRadialGradient,
     QTransform)
 from PySide6.QtWidgets import (QAbstractScrollArea, QApplication, QCheckBox, QComboBox,
-    QFrame, QHBoxLayout, QLayout, QLineEdit,
-    QMainWindow, QMenuBar, QPushButton, QScrollArea,
-    QSizePolicy, QSpacerItem, QStackedWidget, QStatusBar,
+    QFrame, QHBoxLayout, QLabel, QLayout,
+    QLineEdit, QMainWindow, QMenuBar, QPushButton,
+    QScrollArea, QSizePolicy, QSpacerItem, QStackedWidget,
     QTabWidget, QVBoxLayout, QWidget)
-from . import icons_rc
+from UI.base_qt_ui import icons_rc
 
 class Ui_Parser_UI(object):
     def setupUi(self, Parser_UI):
         if not Parser_UI.objectName():
             Parser_UI.setObjectName(u"Parser_UI")
         Parser_UI.setWindowModality(Qt.ApplicationModal)
-        Parser_UI.resize(823, 641)
+        Parser_UI.resize(823, 722)
         Parser_UI.setStyleSheet(u"QWidget {\n"
 "    background-color: #171a21; /* Steam's Dark Theme Background Color */\n"
 "    color: #c6d4df; /* Steam's Text Color */\n"
@@ -182,8 +182,15 @@ class Ui_Parser_UI(object):
 "QDialogButtonBox QPushButton:pressed {\n"
 "    background-color: #5865a6; /* Darker shade when pressed */\n"
 "}\n"
-"")
-        Parser_UI.setToolButtonStyle(Qt.ToolButtonFollowStyle)
+"\n"
+"QToolTip {\n"
+"    border: 1px solid #c8c8c8;\n"
+"	background-color: #171a21; /* Steam's Dark Theme Background Color */\n"
+"    color: #c6d4df; /* Steam's Text Color */\n"
+"    font-size: 12px;\n"
+"	border-radius:5px;\n"
+"    }")
+        Parser_UI.setToolButtonStyle(Qt.ToolButtonTextOnly)
         Parser_UI.setDocumentMode(True)
         Parser_UI.setTabShape(QTabWidget.Rounded)
         Parser_UI.setUnifiedTitleAndToolBarOnMac(False)
@@ -195,72 +202,6 @@ class Ui_Parser_UI(object):
         self.centralwidget.setObjectName(u"centralwidget")
         self.horizontalLayout_2 = QHBoxLayout(self.centralwidget)
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
-        self.leftSideMenu_Frame = QFrame(self.centralwidget)
-        self.leftSideMenu_Frame.setObjectName(u"leftSideMenu_Frame")
-        sizePolicy = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Preferred)
-        sizePolicy.setHorizontalStretch(1)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.leftSideMenu_Frame.sizePolicy().hasHeightForWidth())
-        self.leftSideMenu_Frame.setSizePolicy(sizePolicy)
-        self.leftSideMenu_Frame.setFrameShape(QFrame.StyledPanel)
-        self.leftSideMenu_Frame.setFrameShadow(QFrame.Raised)
-        self.verticalLayout = QVBoxLayout(self.leftSideMenu_Frame)
-        self.verticalLayout.setObjectName(u"verticalLayout")
-        self.xlsRawImportPage_Button = QPushButton(self.leftSideMenu_Frame)
-        self.xlsRawImportPage_Button.setObjectName(u"xlsRawImportPage_Button")
-        self.xlsRawImportPage_Button.setCursor(QCursor(Qt.ArrowCursor))
-        icon = QIcon()
-        icon.addFile(u":/file_open/icons/icons8-excel.svg", QSize(), QIcon.Normal, QIcon.Off)
-        self.xlsRawImportPage_Button.setIcon(icon)
-        self.xlsRawImportPage_Button.setIconSize(QSize(40, 40))
-
-        self.verticalLayout.addWidget(self.xlsRawImportPage_Button)
-
-        self.databaseEdit_Button_2 = QPushButton(self.leftSideMenu_Frame)
-        self.databaseEdit_Button_2.setObjectName(u"databaseEdit_Button_2")
-        self.databaseEdit_Button_2.setEnabled(True)
-        icon1 = QIcon()
-        icon1.addFile(u":/file_open/icons/icons8-database-100.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.databaseEdit_Button_2.setIcon(icon1)
-        self.databaseEdit_Button_2.setIconSize(QSize(40, 40))
-
-        self.verticalLayout.addWidget(self.databaseEdit_Button_2)
-
-        self.wordParsePage_Button = QPushButton(self.leftSideMenu_Frame)
-        self.wordParsePage_Button.setObjectName(u"wordParsePage_Button")
-        icon2 = QIcon()
-        icon2.addFile(u":/file_open/icons/icons8-word-100.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.wordParsePage_Button.setIcon(icon2)
-        self.wordParsePage_Button.setIconSize(QSize(40, 40))
-
-        self.verticalLayout.addWidget(self.wordParsePage_Button)
-
-        self.verticalSpacer = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
-
-        self.verticalLayout.addItem(self.verticalSpacer)
-
-        self.settingsEdit_Button = QPushButton(self.leftSideMenu_Frame)
-        self.settingsEdit_Button.setObjectName(u"settingsEdit_Button")
-        self.settingsEdit_Button.setEnabled(True)
-        icon3 = QIcon()
-        icon3.addFile(u":/file_open/icons/icons8-settings-128.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.settingsEdit_Button.setIcon(icon3)
-        self.settingsEdit_Button.setIconSize(QSize(40, 40))
-
-        self.verticalLayout.addWidget(self.settingsEdit_Button)
-
-        self.exit_Button = QPushButton(self.leftSideMenu_Frame)
-        self.exit_Button.setObjectName(u"exit_Button")
-        icon4 = QIcon()
-        icon4.addFile(u":/file_open/icons/icons8-exit-80.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.exit_Button.setIcon(icon4)
-        self.exit_Button.setIconSize(QSize(40, 40))
-
-        self.verticalLayout.addWidget(self.exit_Button)
-
-
-        self.horizontalLayout_2.addWidget(self.leftSideMenu_Frame)
-
         self.line = QFrame(self.centralwidget)
         self.line.setObjectName(u"line")
         self.line.setStyleSheet(u"Line{\n"
@@ -272,13 +213,184 @@ class Ui_Parser_UI(object):
 
         self.horizontalLayout_2.addWidget(self.line)
 
-        self.stackedWidget = QStackedWidget(self.centralwidget)
-        self.stackedWidget.setObjectName(u"stackedWidget")
+        self.frame = QFrame(self.centralwidget)
+        self.frame.setObjectName(u"frame")
+        self.frame.setFrameShape(QFrame.StyledPanel)
+        self.frame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout = QVBoxLayout(self.frame)
+        self.verticalLayout.setObjectName(u"verticalLayout")
+        self.titlebar_frame = QFrame(self.frame)
+        self.titlebar_frame.setObjectName(u"titlebar_frame")
+        sizePolicy = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(1)
+        sizePolicy.setHeightForWidth(self.titlebar_frame.sizePolicy().hasHeightForWidth())
+        self.titlebar_frame.setSizePolicy(sizePolicy)
+        self.titlebar_frame.setStyleSheet(u"QPushButton {\n"
+"	border:none;\n"
+"	border-radius: 8px;\n"
+"	max-width: 16px;\n"
+"	max-height: 16px;\n"
+"    padding: 0;\n"
+"    margin: 0;\n"
+"    border: 0;\n"
+"}\n"
+"#btn_minimize {\n"
+"    background-color: #4AE137;\n"
+"}\n"
+"#btn_minimize:hover {\n"
+"    background-color: #4DFD36;\n"
+"}\n"
+"#btn_minimize:pressed {\n"
+"    background-color: #21A80F;\n"
+"}\n"
+"\n"
+"#btn_maximize_restore {\n"
+"    background-color: #FDCE36;\n"
+"}\n"
+"\n"
+"#btn_maximize_restore:hover {\n"
+"    background-color: #FCFF34;\n"
+"}\n"
+"#btn_maximize_restore:pressed {\n"
+"    background-color: #BCBF05;\n"
+"}\n"
+"\n"
+"#btn_close {\n"
+"    background-color: #D54040;\n"
+"}\n"
+"#btn_close:hover {\n"
+"    background-color: #F82D2D;\n"
+"}\n"
+"#btn_close:pressed {\n"
+"    background-color: #A90808;\n"
+"}\n"
+"QLabel {\n"
+"    font-family: \"Microsoft Sans Serif\", \"Arial\", \"Times New Roman\"; /* Use a fallback font */\n"
+"    font-size: 14px;\n"
+"    font-weight: bold;\n"
+"	border:none;\n"
+"	background-color:transparent;\n"
+"}")
+        self.titlebar_frame.setFrameShape(QFrame.StyledPanel)
+        self.titlebar_frame.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout = QHBoxLayout(self.titlebar_frame)
+        self.horizontalLayout.setObjectName(u"horizontalLayout")
+        self.label = QLabel(self.titlebar_frame)
+        self.label.setObjectName(u"label")
         sizePolicy1 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Preferred)
-        sizePolicy1.setHorizontalStretch(8)
+        sizePolicy1.setHorizontalStretch(6)
         sizePolicy1.setVerticalStretch(0)
-        sizePolicy1.setHeightForWidth(self.stackedWidget.sizePolicy().hasHeightForWidth())
-        self.stackedWidget.setSizePolicy(sizePolicy1)
+        sizePolicy1.setHeightForWidth(self.label.sizePolicy().hasHeightForWidth())
+        self.label.setSizePolicy(sizePolicy1)
+        self.label.setStyleSheet(u"")
+        self.label.setTextFormat(Qt.RichText)
+        self.label.setScaledContents(False)
+
+        self.horizontalLayout.addWidget(self.label)
+
+        self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+
+        self.horizontalLayout.addItem(self.horizontalSpacer)
+
+
+        self.verticalLayout.addWidget(self.titlebar_frame)
+
+        self.frame_3 = QFrame(self.frame)
+        self.frame_3.setObjectName(u"frame_3")
+        sizePolicy2 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Preferred)
+        sizePolicy2.setHorizontalStretch(0)
+        sizePolicy2.setVerticalStretch(9)
+        sizePolicy2.setHeightForWidth(self.frame_3.sizePolicy().hasHeightForWidth())
+        self.frame_3.setSizePolicy(sizePolicy2)
+        self.frame_3.setStyleSheet(u"")
+        self.frame_3.setFrameShape(QFrame.StyledPanel)
+        self.frame_3.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_11 = QHBoxLayout(self.frame_3)
+        self.horizontalLayout_11.setObjectName(u"horizontalLayout_11")
+        self.leftSideMenu_Frame = QFrame(self.frame_3)
+        self.leftSideMenu_Frame.setObjectName(u"leftSideMenu_Frame")
+        sizePolicy3 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Preferred)
+        sizePolicy3.setHorizontalStretch(1)
+        sizePolicy3.setVerticalStretch(0)
+        sizePolicy3.setHeightForWidth(self.leftSideMenu_Frame.sizePolicy().hasHeightForWidth())
+        self.leftSideMenu_Frame.setSizePolicy(sizePolicy3)
+        self.leftSideMenu_Frame.setFrameShape(QFrame.StyledPanel)
+        self.leftSideMenu_Frame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_2 = QVBoxLayout(self.leftSideMenu_Frame)
+        self.verticalLayout_2.setObjectName(u"verticalLayout_2")
+        self.xlsRawImportPage_Button = QPushButton(self.leftSideMenu_Frame)
+        self.xlsRawImportPage_Button.setObjectName(u"xlsRawImportPage_Button")
+        self.xlsRawImportPage_Button.setCursor(QCursor(Qt.ArrowCursor))
+        self.xlsRawImportPage_Button.setStyleSheet(u"")
+        icon = QIcon()
+        icon.addFile(u":/file_open/icons/icons8-excel.svg", QSize(), QIcon.Normal, QIcon.Off)
+        self.xlsRawImportPage_Button.setIcon(icon)
+        self.xlsRawImportPage_Button.setIconSize(QSize(40, 40))
+
+        self.verticalLayout_2.addWidget(self.xlsRawImportPage_Button)
+
+        self.databaseEdit_Button_2 = QPushButton(self.leftSideMenu_Frame)
+        self.databaseEdit_Button_2.setObjectName(u"databaseEdit_Button_2")
+        self.databaseEdit_Button_2.setEnabled(True)
+        icon1 = QIcon()
+        icon1.addFile(u":/file_open/icons/icons8-database-100.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.databaseEdit_Button_2.setIcon(icon1)
+        self.databaseEdit_Button_2.setIconSize(QSize(40, 40))
+
+        self.verticalLayout_2.addWidget(self.databaseEdit_Button_2)
+
+        self.wordParsePage_Button = QPushButton(self.leftSideMenu_Frame)
+        self.wordParsePage_Button.setObjectName(u"wordParsePage_Button")
+        icon2 = QIcon()
+        icon2.addFile(u":/file_open/icons/icons8-word-100.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.wordParsePage_Button.setIcon(icon2)
+        self.wordParsePage_Button.setIconSize(QSize(40, 40))
+
+        self.verticalLayout_2.addWidget(self.wordParsePage_Button)
+
+        self.verticalSpacer = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+
+        self.verticalLayout_2.addItem(self.verticalSpacer)
+
+        self.settingsEdit_Button = QPushButton(self.leftSideMenu_Frame)
+        self.settingsEdit_Button.setObjectName(u"settingsEdit_Button")
+        self.settingsEdit_Button.setEnabled(True)
+        icon3 = QIcon()
+        icon3.addFile(u":/file_open/icons/icons8-settings-128.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.settingsEdit_Button.setIcon(icon3)
+        self.settingsEdit_Button.setIconSize(QSize(40, 40))
+
+        self.verticalLayout_2.addWidget(self.settingsEdit_Button)
+
+        self.exit_Button = QPushButton(self.leftSideMenu_Frame)
+        self.exit_Button.setObjectName(u"exit_Button")
+        self.exit_Button.setStyleSheet(u"#exit_Button{\n"
+"	background-color:#B00C06;\n"
+"}\n"
+"#exit_Button:hover{\n"
+"	background-color:#E90800;\n"
+"}\n"
+"#exit_Button:pressed{\n"
+"	background-color:#790B07;\n"
+"}")
+        icon4 = QIcon()
+        icon4.addFile(u":/file_open/icons/icons8-exit-80.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.exit_Button.setIcon(icon4)
+        self.exit_Button.setIconSize(QSize(40, 40))
+
+        self.verticalLayout_2.addWidget(self.exit_Button)
+
+
+        self.horizontalLayout_11.addWidget(self.leftSideMenu_Frame)
+
+        self.stackedWidget = QStackedWidget(self.frame_3)
+        self.stackedWidget.setObjectName(u"stackedWidget")
+        sizePolicy4 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Preferred)
+        sizePolicy4.setHorizontalStretch(8)
+        sizePolicy4.setVerticalStretch(0)
+        sizePolicy4.setHeightForWidth(self.stackedWidget.sizePolicy().hasHeightForWidth())
+        self.stackedWidget.setSizePolicy(sizePolicy4)
         self.stackedWidget.setContextMenuPolicy(Qt.NoContextMenu)
         self.xlsRawImport_Page = QWidget()
         self.xlsRawImport_Page.setObjectName(u"xlsRawImport_Page")
@@ -288,8 +400,8 @@ class Ui_Parser_UI(object):
         self.xlsRawFileImport_Frame.setObjectName(u"xlsRawFileImport_Frame")
         self.xlsRawFileImport_Frame.setFrameShape(QFrame.StyledPanel)
         self.xlsRawFileImport_Frame.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_2 = QVBoxLayout(self.xlsRawFileImport_Frame)
-        self.verticalLayout_2.setObjectName(u"verticalLayout_2")
+        self.verticalLayout_3 = QVBoxLayout(self.xlsRawFileImport_Frame)
+        self.verticalLayout_3.setObjectName(u"verticalLayout_3")
         self.xlsRawFileImport_MainFrame = QFrame(self.xlsRawFileImport_Frame)
         self.xlsRawFileImport_MainFrame.setObjectName(u"xlsRawFileImport_MainFrame")
         self.xlsRawFileImport_MainFrame.setFrameShape(QFrame.StyledPanel)
@@ -312,50 +424,50 @@ class Ui_Parser_UI(object):
 
         self.xlsRawFileBrowseFrame = QFrame(self.xlsRawFileImport_MainFrame)
         self.xlsRawFileBrowseFrame.setObjectName(u"xlsRawFileBrowseFrame")
-        sizePolicy2 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Preferred)
-        sizePolicy2.setHorizontalStretch(0)
-        sizePolicy2.setVerticalStretch(2)
-        sizePolicy2.setHeightForWidth(self.xlsRawFileBrowseFrame.sizePolicy().hasHeightForWidth())
-        self.xlsRawFileBrowseFrame.setSizePolicy(sizePolicy2)
+        sizePolicy5 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Preferred)
+        sizePolicy5.setHorizontalStretch(0)
+        sizePolicy5.setVerticalStretch(2)
+        sizePolicy5.setHeightForWidth(self.xlsRawFileBrowseFrame.sizePolicy().hasHeightForWidth())
+        self.xlsRawFileBrowseFrame.setSizePolicy(sizePolicy5)
         self.xlsRawFileBrowseFrame.setFrameShape(QFrame.StyledPanel)
         self.xlsRawFileBrowseFrame.setFrameShadow(QFrame.Raised)
-        self.horizontalLayout = QHBoxLayout(self.xlsRawFileBrowseFrame)
-        self.horizontalLayout.setObjectName(u"horizontalLayout")
+        self.horizontalLayout_4 = QHBoxLayout(self.xlsRawFileBrowseFrame)
+        self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
         self.xlsRawFilePath_Line = QLineEdit(self.xlsRawFileBrowseFrame)
         self.xlsRawFilePath_Line.setObjectName(u"xlsRawFilePath_Line")
         self.xlsRawFilePath_Line.setEnabled(True)
-        sizePolicy3 = QSizePolicy(QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Fixed)
-        sizePolicy3.setHorizontalStretch(6)
-        sizePolicy3.setVerticalStretch(0)
-        sizePolicy3.setHeightForWidth(self.xlsRawFilePath_Line.sizePolicy().hasHeightForWidth())
-        self.xlsRawFilePath_Line.setSizePolicy(sizePolicy3)
+        sizePolicy6 = QSizePolicy(QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Fixed)
+        sizePolicy6.setHorizontalStretch(6)
+        sizePolicy6.setVerticalStretch(0)
+        sizePolicy6.setHeightForWidth(self.xlsRawFilePath_Line.sizePolicy().hasHeightForWidth())
+        self.xlsRawFilePath_Line.setSizePolicy(sizePolicy6)
         self.xlsRawFilePath_Line.setReadOnly(True)
 
-        self.horizontalLayout.addWidget(self.xlsRawFilePath_Line)
+        self.horizontalLayout_4.addWidget(self.xlsRawFilePath_Line)
 
         self.xlsRawFilePathBrowse_Button = QPushButton(self.xlsRawFileBrowseFrame)
         self.xlsRawFilePathBrowse_Button.setObjectName(u"xlsRawFilePathBrowse_Button")
-        sizePolicy4 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Fixed)
-        sizePolicy4.setHorizontalStretch(2)
-        sizePolicy4.setVerticalStretch(0)
-        sizePolicy4.setHeightForWidth(self.xlsRawFilePathBrowse_Button.sizePolicy().hasHeightForWidth())
-        self.xlsRawFilePathBrowse_Button.setSizePolicy(sizePolicy4)
+        sizePolicy7 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Fixed)
+        sizePolicy7.setHorizontalStretch(2)
+        sizePolicy7.setVerticalStretch(0)
+        sizePolicy7.setHeightForWidth(self.xlsRawFilePathBrowse_Button.sizePolicy().hasHeightForWidth())
+        self.xlsRawFilePathBrowse_Button.setSizePolicy(sizePolicy7)
         self.xlsRawFilePathBrowse_Button.setStyleSheet(u".material-icons.orange600 { color: #FB8C00; }")
         icon5 = QIcon()
         icon5.addFile(u":/file_open/icons/icons8-open-file.svg", QSize(), QIcon.Normal, QIcon.Off)
         self.xlsRawFilePathBrowse_Button.setIcon(icon5)
 
-        self.horizontalLayout.addWidget(self.xlsRawFilePathBrowse_Button)
+        self.horizontalLayout_4.addWidget(self.xlsRawFilePathBrowse_Button)
 
         self.xlsRawFilePathLoad_Button = QPushButton(self.xlsRawFileBrowseFrame)
         self.xlsRawFilePathLoad_Button.setObjectName(u"xlsRawFilePathLoad_Button")
-        sizePolicy4.setHeightForWidth(self.xlsRawFilePathLoad_Button.sizePolicy().hasHeightForWidth())
-        self.xlsRawFilePathLoad_Button.setSizePolicy(sizePolicy4)
+        sizePolicy7.setHeightForWidth(self.xlsRawFilePathLoad_Button.sizePolicy().hasHeightForWidth())
+        self.xlsRawFilePathLoad_Button.setSizePolicy(sizePolicy7)
         icon6 = QIcon()
         icon6.addFile(u":/file_open/icons/icons8-download-60.png", QSize(), QIcon.Normal, QIcon.Off)
         self.xlsRawFilePathLoad_Button.setIcon(icon6)
 
-        self.horizontalLayout.addWidget(self.xlsRawFilePathLoad_Button)
+        self.horizontalLayout_4.addWidget(self.xlsRawFilePathLoad_Button)
 
 
         self.verticalLayout_9.addWidget(self.xlsRawFileBrowseFrame)
@@ -381,7 +493,7 @@ class Ui_Parser_UI(object):
         self.verticalLayout_9.addWidget(self.columnChoose_Frame)
 
 
-        self.verticalLayout_2.addWidget(self.xlsRawFileImport_MainFrame)
+        self.verticalLayout_3.addWidget(self.xlsRawFileImport_MainFrame)
 
         self.line_2 = QFrame(self.xlsRawFileImport_Frame)
         self.line_2.setObjectName(u"line_2")
@@ -390,24 +502,27 @@ class Ui_Parser_UI(object):
         self.line_2.setMidLineWidth(1)
         self.line_2.setFrameShape(QFrame.HLine)
 
-        self.verticalLayout_2.addWidget(self.line_2)
+        self.verticalLayout_3.addWidget(self.line_2)
 
         self.databaseLoad_MainFrame = QFrame(self.xlsRawFileImport_Frame)
         self.databaseLoad_MainFrame.setObjectName(u"databaseLoad_MainFrame")
-        sizePolicy2.setHeightForWidth(self.databaseLoad_MainFrame.sizePolicy().hasHeightForWidth())
-        self.databaseLoad_MainFrame.setSizePolicy(sizePolicy2)
+        sizePolicy8 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Preferred)
+        sizePolicy8.setHorizontalStretch(0)
+        sizePolicy8.setVerticalStretch(3)
+        sizePolicy8.setHeightForWidth(self.databaseLoad_MainFrame.sizePolicy().hasHeightForWidth())
+        self.databaseLoad_MainFrame.setSizePolicy(sizePolicy8)
         self.databaseLoad_MainFrame.setFrameShape(QFrame.StyledPanel)
         self.databaseLoad_MainFrame.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_3 = QVBoxLayout(self.databaseLoad_MainFrame)
-        self.verticalLayout_3.setObjectName(u"verticalLayout_3")
+        self.verticalLayout_4 = QVBoxLayout(self.databaseLoad_MainFrame)
+        self.verticalLayout_4.setObjectName(u"verticalLayout_4")
         self.databaseBrowse_LabelButton = QPushButton(self.databaseLoad_MainFrame)
         self.databaseBrowse_LabelButton.setObjectName(u"databaseBrowse_LabelButton")
         self.databaseBrowse_LabelButton.setEnabled(False)
-        sizePolicy5 = QSizePolicy(QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Fixed)
-        sizePolicy5.setHorizontalStretch(0)
-        sizePolicy5.setVerticalStretch(1)
-        sizePolicy5.setHeightForWidth(self.databaseBrowse_LabelButton.sizePolicy().hasHeightForWidth())
-        self.databaseBrowse_LabelButton.setSizePolicy(sizePolicy5)
+        sizePolicy9 = QSizePolicy(QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Preferred)
+        sizePolicy9.setHorizontalStretch(0)
+        sizePolicy9.setVerticalStretch(1)
+        sizePolicy9.setHeightForWidth(self.databaseBrowse_LabelButton.sizePolicy().hasHeightForWidth())
+        self.databaseBrowse_LabelButton.setSizePolicy(sizePolicy9)
         self.databaseBrowse_LabelButton.setStyleSheet(u"QPushButton {\n"
 "    background-color: rgba(255,255,255,30); /* Steam's Button Background Color */\n"
 "    color: #ffffff; /* White text for buttons */\n"
@@ -420,44 +535,49 @@ class Ui_Parser_UI(object):
         self.databaseBrowse_LabelButton.setIcon(icon7)
         self.databaseBrowse_LabelButton.setIconSize(QSize(25, 25))
 
-        self.verticalLayout_3.addWidget(self.databaseBrowse_LabelButton)
+        self.verticalLayout_4.addWidget(self.databaseBrowse_LabelButton)
 
         self.databaseConnect_Frame = QFrame(self.databaseLoad_MainFrame)
         self.databaseConnect_Frame.setObjectName(u"databaseConnect_Frame")
-        sizePolicy6 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Preferred)
-        sizePolicy6.setHorizontalStretch(0)
-        sizePolicy6.setVerticalStretch(5)
-        sizePolicy6.setHeightForWidth(self.databaseConnect_Frame.sizePolicy().hasHeightForWidth())
-        self.databaseConnect_Frame.setSizePolicy(sizePolicy6)
+        sizePolicy10 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Preferred)
+        sizePolicy10.setHorizontalStretch(0)
+        sizePolicy10.setVerticalStretch(5)
+        sizePolicy10.setHeightForWidth(self.databaseConnect_Frame.sizePolicy().hasHeightForWidth())
+        self.databaseConnect_Frame.setSizePolicy(sizePolicy10)
         self.databaseConnect_Frame.setFrameShape(QFrame.StyledPanel)
         self.databaseConnect_Frame.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_4 = QVBoxLayout(self.databaseConnect_Frame)
-        self.verticalLayout_4.setObjectName(u"verticalLayout_4")
+        self.verticalLayout_5 = QVBoxLayout(self.databaseConnect_Frame)
+        self.verticalLayout_5.setObjectName(u"verticalLayout_5")
         self.databaseBrowse_Frame = QFrame(self.databaseConnect_Frame)
         self.databaseBrowse_Frame.setObjectName(u"databaseBrowse_Frame")
-        sizePolicy2.setHeightForWidth(self.databaseBrowse_Frame.sizePolicy().hasHeightForWidth())
-        self.databaseBrowse_Frame.setSizePolicy(sizePolicy2)
+        sizePolicy11 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Preferred)
+        sizePolicy11.setHorizontalStretch(0)
+        sizePolicy11.setVerticalStretch(4)
+        sizePolicy11.setHeightForWidth(self.databaseBrowse_Frame.sizePolicy().hasHeightForWidth())
+        self.databaseBrowse_Frame.setSizePolicy(sizePolicy11)
+        self.databaseBrowse_Frame.setMinimumSize(QSize(0, 50))
+        self.databaseBrowse_Frame.setStyleSheet(u"")
         self.databaseBrowse_Frame.setFrameShape(QFrame.StyledPanel)
         self.databaseBrowse_Frame.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_5 = QHBoxLayout(self.databaseBrowse_Frame)
         self.horizontalLayout_5.setObjectName(u"horizontalLayout_5")
         self.DatabaseChoice_ComboBox = QComboBox(self.databaseBrowse_Frame)
         self.DatabaseChoice_ComboBox.setObjectName(u"DatabaseChoice_ComboBox")
-        sizePolicy7 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Fixed)
-        sizePolicy7.setHorizontalStretch(8)
-        sizePolicy7.setVerticalStretch(0)
-        sizePolicy7.setHeightForWidth(self.DatabaseChoice_ComboBox.sizePolicy().hasHeightForWidth())
-        self.DatabaseChoice_ComboBox.setSizePolicy(sizePolicy7)
+        sizePolicy12 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Preferred)
+        sizePolicy12.setHorizontalStretch(6)
+        sizePolicy12.setVerticalStretch(2)
+        sizePolicy12.setHeightForWidth(self.DatabaseChoice_ComboBox.sizePolicy().hasHeightForWidth())
+        self.DatabaseChoice_ComboBox.setSizePolicy(sizePolicy12)
 
         self.horizontalLayout_5.addWidget(self.DatabaseChoice_ComboBox)
 
         self.DatabaseConnect_Button = QPushButton(self.databaseBrowse_Frame)
         self.DatabaseConnect_Button.setObjectName(u"DatabaseConnect_Button")
-        sizePolicy8 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Fixed)
-        sizePolicy8.setHorizontalStretch(1)
-        sizePolicy8.setVerticalStretch(0)
-        sizePolicy8.setHeightForWidth(self.DatabaseConnect_Button.sizePolicy().hasHeightForWidth())
-        self.DatabaseConnect_Button.setSizePolicy(sizePolicy8)
+        sizePolicy13 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Fixed)
+        sizePolicy13.setHorizontalStretch(1)
+        sizePolicy13.setVerticalStretch(0)
+        sizePolicy13.setHeightForWidth(self.DatabaseConnect_Button.sizePolicy().hasHeightForWidth())
+        self.DatabaseConnect_Button.setSizePolicy(sizePolicy13)
         icon8 = QIcon()
         icon8.addFile(u":/file_open/icons/icons8-connect-100.png", QSize(), QIcon.Normal, QIcon.Off)
         self.DatabaseConnect_Button.setIcon(icon8)
@@ -465,27 +585,28 @@ class Ui_Parser_UI(object):
         self.horizontalLayout_5.addWidget(self.DatabaseConnect_Button)
 
 
-        self.verticalLayout_4.addWidget(self.databaseBrowse_Frame)
+        self.verticalLayout_5.addWidget(self.databaseBrowse_Frame)
 
         self.tableBrowse_Frame = QFrame(self.databaseConnect_Frame)
         self.tableBrowse_Frame.setObjectName(u"tableBrowse_Frame")
-        sizePolicy2.setHeightForWidth(self.tableBrowse_Frame.sizePolicy().hasHeightForWidth())
-        self.tableBrowse_Frame.setSizePolicy(sizePolicy2)
+        sizePolicy11.setHeightForWidth(self.tableBrowse_Frame.sizePolicy().hasHeightForWidth())
+        self.tableBrowse_Frame.setSizePolicy(sizePolicy11)
+        self.tableBrowse_Frame.setMinimumSize(QSize(0, 49))
         self.tableBrowse_Frame.setFrameShape(QFrame.StyledPanel)
         self.tableBrowse_Frame.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_6 = QHBoxLayout(self.tableBrowse_Frame)
         self.horizontalLayout_6.setObjectName(u"horizontalLayout_6")
         self.TableChoice_ComboBox = QComboBox(self.tableBrowse_Frame)
         self.TableChoice_ComboBox.setObjectName(u"TableChoice_ComboBox")
-        sizePolicy7.setHeightForWidth(self.TableChoice_ComboBox.sizePolicy().hasHeightForWidth())
-        self.TableChoice_ComboBox.setSizePolicy(sizePolicy7)
+        sizePolicy12.setHeightForWidth(self.TableChoice_ComboBox.sizePolicy().hasHeightForWidth())
+        self.TableChoice_ComboBox.setSizePolicy(sizePolicy12)
 
         self.horizontalLayout_6.addWidget(self.TableChoice_ComboBox)
 
         self.DatabaseConnectionSave_Button = QPushButton(self.tableBrowse_Frame)
         self.DatabaseConnectionSave_Button.setObjectName(u"DatabaseConnectionSave_Button")
-        sizePolicy8.setHeightForWidth(self.DatabaseConnectionSave_Button.sizePolicy().hasHeightForWidth())
-        self.DatabaseConnectionSave_Button.setSizePolicy(sizePolicy8)
+        sizePolicy13.setHeightForWidth(self.DatabaseConnectionSave_Button.sizePolicy().hasHeightForWidth())
+        self.DatabaseConnectionSave_Button.setSizePolicy(sizePolicy13)
         icon9 = QIcon()
         icon9.addFile(u":/file_open/icons/icons8-save-100.png", QSize(), QIcon.Normal, QIcon.Off)
         self.DatabaseConnectionSave_Button.setIcon(icon9)
@@ -493,22 +614,25 @@ class Ui_Parser_UI(object):
         self.horizontalLayout_6.addWidget(self.DatabaseConnectionSave_Button)
 
 
-        self.verticalLayout_4.addWidget(self.tableBrowse_Frame)
+        self.verticalLayout_5.addWidget(self.tableBrowse_Frame)
 
 
-        self.verticalLayout_3.addWidget(self.databaseConnect_Frame)
+        self.verticalLayout_4.addWidget(self.databaseConnect_Frame)
 
         self.databaseEdit_Button = QPushButton(self.databaseLoad_MainFrame)
         self.databaseEdit_Button.setObjectName(u"databaseEdit_Button")
-        sizePolicy5.setHeightForWidth(self.databaseEdit_Button.sizePolicy().hasHeightForWidth())
-        self.databaseEdit_Button.setSizePolicy(sizePolicy5)
+        sizePolicy14 = QSizePolicy(QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Fixed)
+        sizePolicy14.setHorizontalStretch(0)
+        sizePolicy14.setVerticalStretch(1)
+        sizePolicy14.setHeightForWidth(self.databaseEdit_Button.sizePolicy().hasHeightForWidth())
+        self.databaseEdit_Button.setSizePolicy(sizePolicy14)
         self.databaseEdit_Button.setIcon(icon1)
         self.databaseEdit_Button.setIconSize(QSize(30, 30))
 
-        self.verticalLayout_3.addWidget(self.databaseEdit_Button)
+        self.verticalLayout_4.addWidget(self.databaseEdit_Button)
 
 
-        self.verticalLayout_2.addWidget(self.databaseLoad_MainFrame)
+        self.verticalLayout_3.addWidget(self.databaseLoad_MainFrame)
 
         self.line_3 = QFrame(self.xlsRawFileImport_Frame)
         self.line_3.setObjectName(u"line_3")
@@ -517,23 +641,20 @@ class Ui_Parser_UI(object):
         self.line_3.setMidLineWidth(1)
         self.line_3.setFrameShape(QFrame.HLine)
 
-        self.verticalLayout_2.addWidget(self.line_3)
+        self.verticalLayout_3.addWidget(self.line_3)
 
         self.xlsParsedFile_MainFrame = QFrame(self.xlsRawFileImport_Frame)
         self.xlsParsedFile_MainFrame.setObjectName(u"xlsParsedFile_MainFrame")
-        sizePolicy9 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Preferred)
-        sizePolicy9.setHorizontalStretch(0)
-        sizePolicy9.setVerticalStretch(1)
-        sizePolicy9.setHeightForWidth(self.xlsParsedFile_MainFrame.sizePolicy().hasHeightForWidth())
-        self.xlsParsedFile_MainFrame.setSizePolicy(sizePolicy9)
+        sizePolicy.setHeightForWidth(self.xlsParsedFile_MainFrame.sizePolicy().hasHeightForWidth())
+        self.xlsParsedFile_MainFrame.setSizePolicy(sizePolicy)
         self.xlsParsedFile_MainFrame.setFrameShape(QFrame.StyledPanel)
         self.xlsParsedFile_MainFrame.setFrameShadow(QFrame.Raised)
         self.verticalLayout_8 = QVBoxLayout(self.xlsParsedFile_MainFrame)
         self.verticalLayout_8.setObjectName(u"verticalLayout_8")
         self.xlsParsedFileBrowseFrame = QFrame(self.xlsParsedFile_MainFrame)
         self.xlsParsedFileBrowseFrame.setObjectName(u"xlsParsedFileBrowseFrame")
-        sizePolicy2.setHeightForWidth(self.xlsParsedFileBrowseFrame.sizePolicy().hasHeightForWidth())
-        self.xlsParsedFileBrowseFrame.setSizePolicy(sizePolicy2)
+        sizePolicy5.setHeightForWidth(self.xlsParsedFileBrowseFrame.sizePolicy().hasHeightForWidth())
+        self.xlsParsedFileBrowseFrame.setSizePolicy(sizePolicy5)
         self.xlsParsedFileBrowseFrame.setFrameShape(QFrame.StyledPanel)
         self.xlsParsedFileBrowseFrame.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_7 = QHBoxLayout(self.xlsParsedFileBrowseFrame)
@@ -541,16 +662,16 @@ class Ui_Parser_UI(object):
         self.xlsParsedFilePath_Line = QLineEdit(self.xlsParsedFileBrowseFrame)
         self.xlsParsedFilePath_Line.setObjectName(u"xlsParsedFilePath_Line")
         self.xlsParsedFilePath_Line.setEnabled(True)
-        sizePolicy3.setHeightForWidth(self.xlsParsedFilePath_Line.sizePolicy().hasHeightForWidth())
-        self.xlsParsedFilePath_Line.setSizePolicy(sizePolicy3)
+        sizePolicy6.setHeightForWidth(self.xlsParsedFilePath_Line.sizePolicy().hasHeightForWidth())
+        self.xlsParsedFilePath_Line.setSizePolicy(sizePolicy6)
         self.xlsParsedFilePath_Line.setReadOnly(True)
 
         self.horizontalLayout_7.addWidget(self.xlsParsedFilePath_Line)
 
         self.xlsParsedFilePathBrowse_Button = QPushButton(self.xlsParsedFileBrowseFrame)
         self.xlsParsedFilePathBrowse_Button.setObjectName(u"xlsParsedFilePathBrowse_Button")
-        sizePolicy4.setHeightForWidth(self.xlsParsedFilePathBrowse_Button.sizePolicy().hasHeightForWidth())
-        self.xlsParsedFilePathBrowse_Button.setSizePolicy(sizePolicy4)
+        sizePolicy7.setHeightForWidth(self.xlsParsedFilePathBrowse_Button.sizePolicy().hasHeightForWidth())
+        self.xlsParsedFilePathBrowse_Button.setSizePolicy(sizePolicy7)
         self.xlsParsedFilePathBrowse_Button.setStyleSheet(u".material-icons.orange600 { color: #FB8C00; }")
         self.xlsParsedFilePathBrowse_Button.setIcon(icon5)
 
@@ -584,7 +705,7 @@ class Ui_Parser_UI(object):
         self.verticalLayout_8.addWidget(self.parseToXlsFile_Button)
 
 
-        self.verticalLayout_2.addWidget(self.xlsParsedFile_MainFrame)
+        self.verticalLayout_3.addWidget(self.xlsParsedFile_MainFrame)
 
 
         self.horizontalLayout_3.addWidget(self.xlsRawFileImport_Frame)
@@ -596,8 +717,8 @@ class Ui_Parser_UI(object):
         self.verticalLayout_11.setObjectName(u"verticalLayout_11")
         self.databaseConnect_Frame_2 = QFrame(self.databaseEdit_Page)
         self.databaseConnect_Frame_2.setObjectName(u"databaseConnect_Frame_2")
-        sizePolicy2.setHeightForWidth(self.databaseConnect_Frame_2.sizePolicy().hasHeightForWidth())
-        self.databaseConnect_Frame_2.setSizePolicy(sizePolicy2)
+        sizePolicy5.setHeightForWidth(self.databaseConnect_Frame_2.sizePolicy().hasHeightForWidth())
+        self.databaseConnect_Frame_2.setSizePolicy(sizePolicy5)
         self.databaseConnect_Frame_2.setFrameShape(QFrame.StyledPanel)
         self.databaseConnect_Frame_2.setFrameShadow(QFrame.Raised)
         self.verticalLayout_10 = QVBoxLayout(self.databaseConnect_Frame_2)
@@ -618,32 +739,35 @@ class Ui_Parser_UI(object):
 
         self.databaseBrowse_Frame_2 = QFrame(self.databaseConnect_Frame_2)
         self.databaseBrowse_Frame_2.setObjectName(u"databaseBrowse_Frame_2")
-        sizePolicy2.setHeightForWidth(self.databaseBrowse_Frame_2.sizePolicy().hasHeightForWidth())
-        self.databaseBrowse_Frame_2.setSizePolicy(sizePolicy2)
+        sizePolicy5.setHeightForWidth(self.databaseBrowse_Frame_2.sizePolicy().hasHeightForWidth())
+        self.databaseBrowse_Frame_2.setSizePolicy(sizePolicy5)
         self.databaseBrowse_Frame_2.setFrameShape(QFrame.StyledPanel)
         self.databaseBrowse_Frame_2.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_9 = QHBoxLayout(self.databaseBrowse_Frame_2)
         self.horizontalLayout_9.setObjectName(u"horizontalLayout_9")
         self.DatabaseChoice_ComboBox_2 = QComboBox(self.databaseBrowse_Frame_2)
         self.DatabaseChoice_ComboBox_2.setObjectName(u"DatabaseChoice_ComboBox_2")
-        sizePolicy7.setHeightForWidth(self.DatabaseChoice_ComboBox_2.sizePolicy().hasHeightForWidth())
-        self.DatabaseChoice_ComboBox_2.setSizePolicy(sizePolicy7)
+        sizePolicy15 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Fixed)
+        sizePolicy15.setHorizontalStretch(8)
+        sizePolicy15.setVerticalStretch(0)
+        sizePolicy15.setHeightForWidth(self.DatabaseChoice_ComboBox_2.sizePolicy().hasHeightForWidth())
+        self.DatabaseChoice_ComboBox_2.setSizePolicy(sizePolicy15)
         self.DatabaseChoice_ComboBox_2.setEditable(True)
 
         self.horizontalLayout_9.addWidget(self.DatabaseChoice_ComboBox_2)
 
         self.DatabaseConnect_Button_2 = QPushButton(self.databaseBrowse_Frame_2)
         self.DatabaseConnect_Button_2.setObjectName(u"DatabaseConnect_Button_2")
-        sizePolicy8.setHeightForWidth(self.DatabaseConnect_Button_2.sizePolicy().hasHeightForWidth())
-        self.DatabaseConnect_Button_2.setSizePolicy(sizePolicy8)
+        sizePolicy13.setHeightForWidth(self.DatabaseConnect_Button_2.sizePolicy().hasHeightForWidth())
+        self.DatabaseConnect_Button_2.setSizePolicy(sizePolicy13)
         self.DatabaseConnect_Button_2.setIcon(icon8)
 
         self.horizontalLayout_9.addWidget(self.DatabaseConnect_Button_2)
 
         self.DatabaseCreate_Button = QPushButton(self.databaseBrowse_Frame_2)
         self.DatabaseCreate_Button.setObjectName(u"DatabaseCreate_Button")
-        sizePolicy8.setHeightForWidth(self.DatabaseCreate_Button.sizePolicy().hasHeightForWidth())
-        self.DatabaseCreate_Button.setSizePolicy(sizePolicy8)
+        sizePolicy13.setHeightForWidth(self.DatabaseCreate_Button.sizePolicy().hasHeightForWidth())
+        self.DatabaseCreate_Button.setSizePolicy(sizePolicy13)
         icon11 = QIcon()
         icon11.addFile(u":/file_open/icons/icons8-add-database-100.png", QSize(), QIcon.Normal, QIcon.Off)
         self.DatabaseCreate_Button.setIcon(icon11)
@@ -655,32 +779,32 @@ class Ui_Parser_UI(object):
 
         self.tableBrowse_Frame_2 = QFrame(self.databaseConnect_Frame_2)
         self.tableBrowse_Frame_2.setObjectName(u"tableBrowse_Frame_2")
-        sizePolicy2.setHeightForWidth(self.tableBrowse_Frame_2.sizePolicy().hasHeightForWidth())
-        self.tableBrowse_Frame_2.setSizePolicy(sizePolicy2)
+        sizePolicy5.setHeightForWidth(self.tableBrowse_Frame_2.sizePolicy().hasHeightForWidth())
+        self.tableBrowse_Frame_2.setSizePolicy(sizePolicy5)
         self.tableBrowse_Frame_2.setFrameShape(QFrame.StyledPanel)
         self.tableBrowse_Frame_2.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_10 = QHBoxLayout(self.tableBrowse_Frame_2)
         self.horizontalLayout_10.setObjectName(u"horizontalLayout_10")
         self.TableChoice_ComboBox_2 = QComboBox(self.tableBrowse_Frame_2)
         self.TableChoice_ComboBox_2.setObjectName(u"TableChoice_ComboBox_2")
-        sizePolicy7.setHeightForWidth(self.TableChoice_ComboBox_2.sizePolicy().hasHeightForWidth())
-        self.TableChoice_ComboBox_2.setSizePolicy(sizePolicy7)
+        sizePolicy15.setHeightForWidth(self.TableChoice_ComboBox_2.sizePolicy().hasHeightForWidth())
+        self.TableChoice_ComboBox_2.setSizePolicy(sizePolicy15)
         self.TableChoice_ComboBox_2.setEditable(True)
 
         self.horizontalLayout_10.addWidget(self.TableChoice_ComboBox_2)
 
         self.DatabaseConnectionSave_Button_2 = QPushButton(self.tableBrowse_Frame_2)
         self.DatabaseConnectionSave_Button_2.setObjectName(u"DatabaseConnectionSave_Button_2")
-        sizePolicy8.setHeightForWidth(self.DatabaseConnectionSave_Button_2.sizePolicy().hasHeightForWidth())
-        self.DatabaseConnectionSave_Button_2.setSizePolicy(sizePolicy8)
+        sizePolicy13.setHeightForWidth(self.DatabaseConnectionSave_Button_2.sizePolicy().hasHeightForWidth())
+        self.DatabaseConnectionSave_Button_2.setSizePolicy(sizePolicy13)
         self.DatabaseConnectionSave_Button_2.setIcon(icon9)
 
         self.horizontalLayout_10.addWidget(self.DatabaseConnectionSave_Button_2)
 
         self.tableCreate_Button = QPushButton(self.tableBrowse_Frame_2)
         self.tableCreate_Button.setObjectName(u"tableCreate_Button")
-        sizePolicy8.setHeightForWidth(self.tableCreate_Button.sizePolicy().hasHeightForWidth())
-        self.tableCreate_Button.setSizePolicy(sizePolicy8)
+        sizePolicy13.setHeightForWidth(self.tableCreate_Button.sizePolicy().hasHeightForWidth())
+        self.tableCreate_Button.setSizePolicy(sizePolicy13)
         icon12 = QIcon()
         icon12.addFile(u":/file_open/icons/icons8-insert-table-100.png", QSize(), QIcon.Normal, QIcon.Off)
         self.tableCreate_Button.setIcon(icon12)
@@ -695,11 +819,11 @@ class Ui_Parser_UI(object):
 
         self.scrollArea = QScrollArea(self.databaseEdit_Page)
         self.scrollArea.setObjectName(u"scrollArea")
-        sizePolicy10 = QSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Expanding)
-        sizePolicy10.setHorizontalStretch(0)
-        sizePolicy10.setVerticalStretch(8)
-        sizePolicy10.setHeightForWidth(self.scrollArea.sizePolicy().hasHeightForWidth())
-        self.scrollArea.setSizePolicy(sizePolicy10)
+        sizePolicy16 = QSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Expanding)
+        sizePolicy16.setHorizontalStretch(0)
+        sizePolicy16.setVerticalStretch(8)
+        sizePolicy16.setHeightForWidth(self.scrollArea.sizePolicy().hasHeightForWidth())
+        self.scrollArea.setSizePolicy(sizePolicy16)
         self.scrollArea.setContextMenuPolicy(Qt.DefaultContextMenu)
         self.scrollArea.setStyleSheet(u"QScrollArea {\n"
 "    border: 2px solid #5a90d8; /* Border color */\n"
@@ -741,7 +865,7 @@ class Ui_Parser_UI(object):
         self.scrollArea.setAlignment(Qt.AlignHCenter|Qt.AlignTop)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 680, 362))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 642, 338))
         self.verticalLayout_22 = QVBoxLayout(self.scrollAreaWidgetContents)
         self.verticalLayout_22.setObjectName(u"verticalLayout_22")
         self.databaseRecords_layout = QVBoxLayout()
@@ -761,6 +885,12 @@ class Ui_Parser_UI(object):
 
         self.verticalLayout_11.addWidget(self.databaseReOrder_Button)
 
+        self.databaseRegenID_Button = QPushButton(self.databaseEdit_Page)
+        self.databaseRegenID_Button.setObjectName(u"databaseRegenID_Button")
+        self.databaseRegenID_Button.setIcon(icon13)
+
+        self.verticalLayout_11.addWidget(self.databaseRegenID_Button)
+
         self.stackedWidget.addWidget(self.databaseEdit_Page)
         self.wordParseXls_page = QWidget()
         self.wordParseXls_page.setObjectName(u"wordParseXls_page")
@@ -770,8 +900,8 @@ class Ui_Parser_UI(object):
         self.xlsParsedFileImport_MainFrame.setObjectName(u"xlsParsedFileImport_MainFrame")
         self.xlsParsedFileImport_MainFrame.setFrameShape(QFrame.StyledPanel)
         self.xlsParsedFileImport_MainFrame.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_5 = QVBoxLayout(self.xlsParsedFileImport_MainFrame)
-        self.verticalLayout_5.setObjectName(u"verticalLayout_5")
+        self.verticalLayout_6 = QVBoxLayout(self.xlsParsedFileImport_MainFrame)
+        self.verticalLayout_6.setObjectName(u"verticalLayout_6")
         self.xlsParsedFileImport_LabelButton = QPushButton(self.xlsParsedFileImport_MainFrame)
         self.xlsParsedFileImport_LabelButton.setObjectName(u"xlsParsedFileImport_LabelButton")
         self.xlsParsedFileImport_LabelButton.setEnabled(False)
@@ -784,12 +914,12 @@ class Ui_Parser_UI(object):
 "}")
         self.xlsParsedFileImport_LabelButton.setIcon(icon)
 
-        self.verticalLayout_5.addWidget(self.xlsParsedFileImport_LabelButton)
+        self.verticalLayout_6.addWidget(self.xlsParsedFileImport_LabelButton)
 
         self.xlsParsedFileImport_Frame_3 = QFrame(self.xlsParsedFileImport_MainFrame)
         self.xlsParsedFileImport_Frame_3.setObjectName(u"xlsParsedFileImport_Frame_3")
-        sizePolicy2.setHeightForWidth(self.xlsParsedFileImport_Frame_3.sizePolicy().hasHeightForWidth())
-        self.xlsParsedFileImport_Frame_3.setSizePolicy(sizePolicy2)
+        sizePolicy5.setHeightForWidth(self.xlsParsedFileImport_Frame_3.sizePolicy().hasHeightForWidth())
+        self.xlsParsedFileImport_Frame_3.setSizePolicy(sizePolicy5)
         self.xlsParsedFileImport_Frame_3.setFrameShape(QFrame.StyledPanel)
         self.xlsParsedFileImport_Frame_3.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_12 = QHBoxLayout(self.xlsParsedFileImport_Frame_3)
@@ -797,23 +927,23 @@ class Ui_Parser_UI(object):
         self.xlsParsedFileImport_Line = QLineEdit(self.xlsParsedFileImport_Frame_3)
         self.xlsParsedFileImport_Line.setObjectName(u"xlsParsedFileImport_Line")
         self.xlsParsedFileImport_Line.setEnabled(True)
-        sizePolicy3.setHeightForWidth(self.xlsParsedFileImport_Line.sizePolicy().hasHeightForWidth())
-        self.xlsParsedFileImport_Line.setSizePolicy(sizePolicy3)
+        sizePolicy6.setHeightForWidth(self.xlsParsedFileImport_Line.sizePolicy().hasHeightForWidth())
+        self.xlsParsedFileImport_Line.setSizePolicy(sizePolicy6)
         self.xlsParsedFileImport_Line.setReadOnly(True)
 
         self.horizontalLayout_12.addWidget(self.xlsParsedFileImport_Line)
 
         self.xlsParsedFileImportBrowse_Button = QPushButton(self.xlsParsedFileImport_Frame_3)
         self.xlsParsedFileImportBrowse_Button.setObjectName(u"xlsParsedFileImportBrowse_Button")
-        sizePolicy4.setHeightForWidth(self.xlsParsedFileImportBrowse_Button.sizePolicy().hasHeightForWidth())
-        self.xlsParsedFileImportBrowse_Button.setSizePolicy(sizePolicy4)
+        sizePolicy7.setHeightForWidth(self.xlsParsedFileImportBrowse_Button.sizePolicy().hasHeightForWidth())
+        self.xlsParsedFileImportBrowse_Button.setSizePolicy(sizePolicy7)
         self.xlsParsedFileImportBrowse_Button.setStyleSheet(u".material-icons.orange600 { color: #FB8C00; }")
         self.xlsParsedFileImportBrowse_Button.setIcon(icon5)
 
         self.horizontalLayout_12.addWidget(self.xlsParsedFileImportBrowse_Button)
 
 
-        self.verticalLayout_5.addWidget(self.xlsParsedFileImport_Frame_3)
+        self.verticalLayout_6.addWidget(self.xlsParsedFileImport_Frame_3)
 
 
         self.verticalLayout_7.addWidget(self.xlsParsedFileImport_MainFrame)
@@ -842,8 +972,8 @@ class Ui_Parser_UI(object):
 
         self.templateWordImport_Frame = QFrame(self.templateWordImport_MainFrame)
         self.templateWordImport_Frame.setObjectName(u"templateWordImport_Frame")
-        sizePolicy2.setHeightForWidth(self.templateWordImport_Frame.sizePolicy().hasHeightForWidth())
-        self.templateWordImport_Frame.setSizePolicy(sizePolicy2)
+        sizePolicy5.setHeightForWidth(self.templateWordImport_Frame.sizePolicy().hasHeightForWidth())
+        self.templateWordImport_Frame.setSizePolicy(sizePolicy5)
         self.templateWordImport_Frame.setFrameShape(QFrame.StyledPanel)
         self.templateWordImport_Frame.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_20 = QHBoxLayout(self.templateWordImport_Frame)
@@ -851,16 +981,16 @@ class Ui_Parser_UI(object):
         self.templateWordImport_Line = QLineEdit(self.templateWordImport_Frame)
         self.templateWordImport_Line.setObjectName(u"templateWordImport_Line")
         self.templateWordImport_Line.setEnabled(True)
-        sizePolicy3.setHeightForWidth(self.templateWordImport_Line.sizePolicy().hasHeightForWidth())
-        self.templateWordImport_Line.setSizePolicy(sizePolicy3)
+        sizePolicy6.setHeightForWidth(self.templateWordImport_Line.sizePolicy().hasHeightForWidth())
+        self.templateWordImport_Line.setSizePolicy(sizePolicy6)
         self.templateWordImport_Line.setReadOnly(True)
 
         self.horizontalLayout_20.addWidget(self.templateWordImport_Line)
 
         self.templateWordImport_Button = QPushButton(self.templateWordImport_Frame)
         self.templateWordImport_Button.setObjectName(u"templateWordImport_Button")
-        sizePolicy4.setHeightForWidth(self.templateWordImport_Button.sizePolicy().hasHeightForWidth())
-        self.templateWordImport_Button.setSizePolicy(sizePolicy4)
+        sizePolicy7.setHeightForWidth(self.templateWordImport_Button.sizePolicy().hasHeightForWidth())
+        self.templateWordImport_Button.setSizePolicy(sizePolicy7)
         self.templateWordImport_Button.setStyleSheet(u".material-icons.orange600 { color: #FB8C00; }")
         self.templateWordImport_Button.setIcon(icon5)
 
@@ -885,8 +1015,8 @@ class Ui_Parser_UI(object):
         self.parseWordFileExport_MainFrame.setObjectName(u"parseWordFileExport_MainFrame")
         self.parseWordFileExport_MainFrame.setFrameShape(QFrame.StyledPanel)
         self.parseWordFileExport_MainFrame.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_6 = QVBoxLayout(self.parseWordFileExport_MainFrame)
-        self.verticalLayout_6.setObjectName(u"verticalLayout_6")
+        self.verticalLayout_12 = QVBoxLayout(self.parseWordFileExport_MainFrame)
+        self.verticalLayout_12.setObjectName(u"verticalLayout_12")
         self.parseWordFileExport_LabelButton = QPushButton(self.parseWordFileExport_MainFrame)
         self.parseWordFileExport_LabelButton.setObjectName(u"parseWordFileExport_LabelButton")
         self.parseWordFileExport_LabelButton.setEnabled(False)
@@ -899,17 +1029,17 @@ class Ui_Parser_UI(object):
 "}")
         self.parseWordFileExport_LabelButton.setIcon(icon2)
 
-        self.verticalLayout_6.addWidget(self.parseWordFileExport_LabelButton)
+        self.verticalLayout_12.addWidget(self.parseWordFileExport_LabelButton)
 
         self.parseEveryXlsRow_CheckBox = QCheckBox(self.parseWordFileExport_MainFrame)
         self.parseEveryXlsRow_CheckBox.setObjectName(u"parseEveryXlsRow_CheckBox")
 
-        self.verticalLayout_6.addWidget(self.parseEveryXlsRow_CheckBox)
+        self.verticalLayout_12.addWidget(self.parseEveryXlsRow_CheckBox)
 
         self.parseWordFileExport_Frame_4 = QFrame(self.parseWordFileExport_MainFrame)
         self.parseWordFileExport_Frame_4.setObjectName(u"parseWordFileExport_Frame_4")
-        sizePolicy2.setHeightForWidth(self.parseWordFileExport_Frame_4.sizePolicy().hasHeightForWidth())
-        self.parseWordFileExport_Frame_4.setSizePolicy(sizePolicy2)
+        sizePolicy5.setHeightForWidth(self.parseWordFileExport_Frame_4.sizePolicy().hasHeightForWidth())
+        self.parseWordFileExport_Frame_4.setSizePolicy(sizePolicy5)
         self.parseWordFileExport_Frame_4.setFrameShape(QFrame.StyledPanel)
         self.parseWordFileExport_Frame_4.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_13 = QHBoxLayout(self.parseWordFileExport_Frame_4)
@@ -917,23 +1047,23 @@ class Ui_Parser_UI(object):
         self.parseWordFileExport_Line = QLineEdit(self.parseWordFileExport_Frame_4)
         self.parseWordFileExport_Line.setObjectName(u"parseWordFileExport_Line")
         self.parseWordFileExport_Line.setEnabled(True)
-        sizePolicy3.setHeightForWidth(self.parseWordFileExport_Line.sizePolicy().hasHeightForWidth())
-        self.parseWordFileExport_Line.setSizePolicy(sizePolicy3)
+        sizePolicy6.setHeightForWidth(self.parseWordFileExport_Line.sizePolicy().hasHeightForWidth())
+        self.parseWordFileExport_Line.setSizePolicy(sizePolicy6)
         self.parseWordFileExport_Line.setReadOnly(True)
 
         self.horizontalLayout_13.addWidget(self.parseWordFileExport_Line)
 
         self.parseWordFileExport_Button = QPushButton(self.parseWordFileExport_Frame_4)
         self.parseWordFileExport_Button.setObjectName(u"parseWordFileExport_Button")
-        sizePolicy4.setHeightForWidth(self.parseWordFileExport_Button.sizePolicy().hasHeightForWidth())
-        self.parseWordFileExport_Button.setSizePolicy(sizePolicy4)
+        sizePolicy7.setHeightForWidth(self.parseWordFileExport_Button.sizePolicy().hasHeightForWidth())
+        self.parseWordFileExport_Button.setSizePolicy(sizePolicy7)
         self.parseWordFileExport_Button.setStyleSheet(u".material-icons.orange600 { color: #FB8C00; }")
         self.parseWordFileExport_Button.setIcon(icon5)
 
         self.horizontalLayout_13.addWidget(self.parseWordFileExport_Button)
 
 
-        self.verticalLayout_6.addWidget(self.parseWordFileExport_Frame_4)
+        self.verticalLayout_12.addWidget(self.parseWordFileExport_Frame_4)
 
 
         self.verticalLayout_7.addWidget(self.parseWordFileExport_MainFrame)
@@ -949,8 +1079,8 @@ class Ui_Parser_UI(object):
 
         self.parseWordFileExport_ParseButton = QPushButton(self.wordParseXls_page)
         self.parseWordFileExport_ParseButton.setObjectName(u"parseWordFileExport_ParseButton")
-        sizePolicy4.setHeightForWidth(self.parseWordFileExport_ParseButton.sizePolicy().hasHeightForWidth())
-        self.parseWordFileExport_ParseButton.setSizePolicy(sizePolicy4)
+        sizePolicy7.setHeightForWidth(self.parseWordFileExport_ParseButton.sizePolicy().hasHeightForWidth())
+        self.parseWordFileExport_ParseButton.setSizePolicy(sizePolicy7)
         self.parseWordFileExport_ParseButton.setStyleSheet(u"QPushButton {\n"
 "    background-color: rgba(0,255,0,30); /* Steam's Button Background Color */\n"
 "    color: #ffffff; /* White text for buttons */\n"
@@ -983,14 +1113,14 @@ class Ui_Parser_UI(object):
         self.verticalLayout_15 = QVBoxLayout(self.configEdit_Page)
         self.verticalLayout_15.setObjectName(u"verticalLayout_15")
         self.verticalLayout_15.setSizeConstraint(QLayout.SetDefaultConstraint)
-        self.frame = QFrame(self.configEdit_Page)
-        self.frame.setObjectName(u"frame")
-        self.frame.setMaximumSize(QSize(16777215, 100))
-        self.frame.setFrameShape(QFrame.StyledPanel)
-        self.frame.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_14 = QVBoxLayout(self.frame)
+        self.frame_2 = QFrame(self.configEdit_Page)
+        self.frame_2.setObjectName(u"frame_2")
+        self.frame_2.setMaximumSize(QSize(16777215, 100))
+        self.frame_2.setFrameShape(QFrame.StyledPanel)
+        self.frame_2.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_14 = QVBoxLayout(self.frame_2)
         self.verticalLayout_14.setObjectName(u"verticalLayout_14")
-        self.defaultDatabaseTypeName_label = QPushButton(self.frame)
+        self.defaultDatabaseTypeName_label = QPushButton(self.frame_2)
         self.defaultDatabaseTypeName_label.setObjectName(u"defaultDatabaseTypeName_label")
         self.defaultDatabaseTypeName_label.setEnabled(False)
         self.defaultDatabaseTypeName_label.setStyleSheet(u"QPushButton {\n"
@@ -1006,17 +1136,17 @@ class Ui_Parser_UI(object):
 
         self.verticalLayout_14.addWidget(self.defaultDatabaseTypeName_label)
 
-        self.defaultDatabaseTypeConfig_ComboBox = QComboBox(self.frame)
+        self.defaultDatabaseTypeConfig_ComboBox = QComboBox(self.frame_2)
         self.defaultDatabaseTypeConfig_ComboBox.addItem("")
         self.defaultDatabaseTypeConfig_ComboBox.setObjectName(u"defaultDatabaseTypeConfig_ComboBox")
-        sizePolicy7.setHeightForWidth(self.defaultDatabaseTypeConfig_ComboBox.sizePolicy().hasHeightForWidth())
-        self.defaultDatabaseTypeConfig_ComboBox.setSizePolicy(sizePolicy7)
+        sizePolicy15.setHeightForWidth(self.defaultDatabaseTypeConfig_ComboBox.sizePolicy().hasHeightForWidth())
+        self.defaultDatabaseTypeConfig_ComboBox.setSizePolicy(sizePolicy15)
         self.defaultDatabaseTypeConfig_ComboBox.setEditable(False)
 
         self.verticalLayout_14.addWidget(self.defaultDatabaseTypeConfig_ComboBox)
 
 
-        self.verticalLayout_15.addWidget(self.frame)
+        self.verticalLayout_15.addWidget(self.frame_2)
 
         self.line_9 = QFrame(self.configEdit_Page)
         self.line_9.setObjectName(u"line_9")
@@ -1032,8 +1162,8 @@ class Ui_Parser_UI(object):
         self.defaultDatabase_mainframe.setMaximumSize(QSize(16777215, 100))
         self.defaultDatabase_mainframe.setFrameShape(QFrame.StyledPanel)
         self.defaultDatabase_mainframe.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_12 = QVBoxLayout(self.defaultDatabase_mainframe)
-        self.verticalLayout_12.setObjectName(u"verticalLayout_12")
+        self.verticalLayout_16 = QVBoxLayout(self.defaultDatabase_mainframe)
+        self.verticalLayout_16.setObjectName(u"verticalLayout_16")
         self.defaultDatabaseName_label = QPushButton(self.defaultDatabase_mainframe)
         self.defaultDatabaseName_label.setObjectName(u"defaultDatabaseName_label")
         self.defaultDatabaseName_label.setEnabled(False)
@@ -1046,32 +1176,32 @@ class Ui_Parser_UI(object):
 "}")
         self.defaultDatabaseName_label.setIcon(icon1)
 
-        self.verticalLayout_12.addWidget(self.defaultDatabaseName_label)
+        self.verticalLayout_16.addWidget(self.defaultDatabaseName_label)
 
         self.defaultDatabaseChoice_frame = QFrame(self.defaultDatabase_mainframe)
         self.defaultDatabaseChoice_frame.setObjectName(u"defaultDatabaseChoice_frame")
         self.defaultDatabaseChoice_frame.setFrameShape(QFrame.StyledPanel)
         self.defaultDatabaseChoice_frame.setFrameShadow(QFrame.Raised)
-        self.horizontalLayout_4 = QHBoxLayout(self.defaultDatabaseChoice_frame)
-        self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
+        self.horizontalLayout_14 = QHBoxLayout(self.defaultDatabaseChoice_frame)
+        self.horizontalLayout_14.setObjectName(u"horizontalLayout_14")
         self.defaultDatabaseConfig_ComboBox = QComboBox(self.defaultDatabaseChoice_frame)
         self.defaultDatabaseConfig_ComboBox.setObjectName(u"defaultDatabaseConfig_ComboBox")
-        sizePolicy7.setHeightForWidth(self.defaultDatabaseConfig_ComboBox.sizePolicy().hasHeightForWidth())
-        self.defaultDatabaseConfig_ComboBox.setSizePolicy(sizePolicy7)
+        sizePolicy15.setHeightForWidth(self.defaultDatabaseConfig_ComboBox.sizePolicy().hasHeightForWidth())
+        self.defaultDatabaseConfig_ComboBox.setSizePolicy(sizePolicy15)
         self.defaultDatabaseConfig_ComboBox.setEditable(True)
 
-        self.horizontalLayout_4.addWidget(self.defaultDatabaseConfig_ComboBox)
+        self.horizontalLayout_14.addWidget(self.defaultDatabaseConfig_ComboBox)
 
         self.defaultDatabaseCreate_Button = QPushButton(self.defaultDatabaseChoice_frame)
         self.defaultDatabaseCreate_Button.setObjectName(u"defaultDatabaseCreate_Button")
-        sizePolicy4.setHeightForWidth(self.defaultDatabaseCreate_Button.sizePolicy().hasHeightForWidth())
-        self.defaultDatabaseCreate_Button.setSizePolicy(sizePolicy4)
+        sizePolicy7.setHeightForWidth(self.defaultDatabaseCreate_Button.sizePolicy().hasHeightForWidth())
+        self.defaultDatabaseCreate_Button.setSizePolicy(sizePolicy7)
         self.defaultDatabaseCreate_Button.setIcon(icon11)
 
-        self.horizontalLayout_4.addWidget(self.defaultDatabaseCreate_Button)
+        self.horizontalLayout_14.addWidget(self.defaultDatabaseCreate_Button)
 
 
-        self.verticalLayout_12.addWidget(self.defaultDatabaseChoice_frame)
+        self.verticalLayout_16.addWidget(self.defaultDatabaseChoice_frame)
 
 
         self.verticalLayout_15.addWidget(self.defaultDatabase_mainframe)
@@ -1110,8 +1240,8 @@ class Ui_Parser_UI(object):
 
         self.defaultDatabaseConStringGen_Button = QPushButton(self.defaultDatabaseCon_MainFrame)
         self.defaultDatabaseConStringGen_Button.setObjectName(u"defaultDatabaseConStringGen_Button")
-        sizePolicy4.setHeightForWidth(self.defaultDatabaseConStringGen_Button.sizePolicy().hasHeightForWidth())
-        self.defaultDatabaseConStringGen_Button.setSizePolicy(sizePolicy4)
+        sizePolicy7.setHeightForWidth(self.defaultDatabaseConStringGen_Button.sizePolicy().hasHeightForWidth())
+        self.defaultDatabaseConStringGen_Button.setSizePolicy(sizePolicy7)
         icon18 = QIcon()
         icon18.addFile(u":/file_open/icons/icons8-mechanistic-analysis-100.png", QSize(), QIcon.Normal, QIcon.Off)
         self.defaultDatabaseConStringGen_Button.setIcon(icon18)
@@ -1122,27 +1252,27 @@ class Ui_Parser_UI(object):
         self.defaultDatabaseCon_frame_2.setObjectName(u"defaultDatabaseCon_frame_2")
         self.defaultDatabaseCon_frame_2.setFrameShape(QFrame.StyledPanel)
         self.defaultDatabaseCon_frame_2.setFrameShadow(QFrame.Raised)
-        self.horizontalLayout_14 = QHBoxLayout(self.defaultDatabaseCon_frame_2)
-        self.horizontalLayout_14.setObjectName(u"horizontalLayout_14")
+        self.horizontalLayout_15 = QHBoxLayout(self.defaultDatabaseCon_frame_2)
+        self.horizontalLayout_15.setObjectName(u"horizontalLayout_15")
         self.defaultDatabaseConString_lineEdit_2 = QLineEdit(self.defaultDatabaseCon_frame_2)
         self.defaultDatabaseConString_lineEdit_2.setObjectName(u"defaultDatabaseConString_lineEdit_2")
-        sizePolicy11 = QSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Fixed)
-        sizePolicy11.setHorizontalStretch(8)
-        sizePolicy11.setVerticalStretch(0)
-        sizePolicy11.setHeightForWidth(self.defaultDatabaseConString_lineEdit_2.sizePolicy().hasHeightForWidth())
-        self.defaultDatabaseConString_lineEdit_2.setSizePolicy(sizePolicy11)
+        sizePolicy17 = QSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Fixed)
+        sizePolicy17.setHorizontalStretch(8)
+        sizePolicy17.setVerticalStretch(0)
+        sizePolicy17.setHeightForWidth(self.defaultDatabaseConString_lineEdit_2.sizePolicy().hasHeightForWidth())
+        self.defaultDatabaseConString_lineEdit_2.setSizePolicy(sizePolicy17)
 
-        self.horizontalLayout_14.addWidget(self.defaultDatabaseConString_lineEdit_2)
+        self.horizontalLayout_15.addWidget(self.defaultDatabaseConString_lineEdit_2)
 
         self.defaultDatabaseConTest_Button_2 = QPushButton(self.defaultDatabaseCon_frame_2)
         self.defaultDatabaseConTest_Button_2.setObjectName(u"defaultDatabaseConTest_Button_2")
-        sizePolicy4.setHeightForWidth(self.defaultDatabaseConTest_Button_2.sizePolicy().hasHeightForWidth())
-        self.defaultDatabaseConTest_Button_2.setSizePolicy(sizePolicy4)
+        sizePolicy7.setHeightForWidth(self.defaultDatabaseConTest_Button_2.sizePolicy().hasHeightForWidth())
+        self.defaultDatabaseConTest_Button_2.setSizePolicy(sizePolicy7)
         icon19 = QIcon()
         icon19.addFile(u":/file_open/icons/icons8-wrench-100.png", QSize(), QIcon.Normal, QIcon.Off)
         self.defaultDatabaseConTest_Button_2.setIcon(icon19)
 
-        self.horizontalLayout_14.addWidget(self.defaultDatabaseConTest_Button_2)
+        self.horizontalLayout_15.addWidget(self.defaultDatabaseConTest_Button_2)
 
 
         self.verticalLayout_17.addWidget(self.defaultDatabaseCon_frame_2)
@@ -1152,8 +1282,8 @@ class Ui_Parser_UI(object):
 
         self.defaultDatabaseConSave_Button = QPushButton(self.configEdit_Page)
         self.defaultDatabaseConSave_Button.setObjectName(u"defaultDatabaseConSave_Button")
-        sizePolicy4.setHeightForWidth(self.defaultDatabaseConSave_Button.sizePolicy().hasHeightForWidth())
-        self.defaultDatabaseConSave_Button.setSizePolicy(sizePolicy4)
+        sizePolicy7.setHeightForWidth(self.defaultDatabaseConSave_Button.sizePolicy().hasHeightForWidth())
+        self.defaultDatabaseConSave_Button.setSizePolicy(sizePolicy7)
         self.defaultDatabaseConSave_Button.setStyleSheet(u"QPushButton {\n"
 "    background-color: #2C8F05; /* Steam's Button Background Color */\n"
 "    color: #ffffff; /* White text for buttons */\n"
@@ -1179,17 +1309,19 @@ class Ui_Parser_UI(object):
 
         self.stackedWidget.addWidget(self.configEdit_Page)
 
-        self.horizontalLayout_2.addWidget(self.stackedWidget)
+        self.horizontalLayout_11.addWidget(self.stackedWidget)
+
+
+        self.verticalLayout.addWidget(self.frame_3)
+
+
+        self.horizontalLayout_2.addWidget(self.frame)
 
         Parser_UI.setCentralWidget(self.centralwidget)
-        self.statusbar = QStatusBar(Parser_UI)
-        self.statusbar.setObjectName(u"statusbar")
-        Parser_UI.setStatusBar(self.statusbar)
-        self.menubar = QMenuBar(Parser_UI)
-        self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 823, 22))
-        self.menubar.setNativeMenuBar(True)
-        Parser_UI.setMenuBar(self.menubar)
+        self.menuBar = QMenuBar(Parser_UI)
+        self.menuBar.setObjectName(u"menuBar")
+        self.menuBar.setGeometry(QRect(0, 0, 823, 22))
+        Parser_UI.setMenuBar(self.menuBar)
 
         self.retranslateUi(Parser_UI)
 
@@ -1204,6 +1336,7 @@ class Ui_Parser_UI(object):
         Parser_UI.setWindowTitle(QCoreApplication.translate("Parser_UI", u"Parser", None))
         self.actiontest3.setText(QCoreApplication.translate("Parser_UI", u"test3", None))
         self.actiontest4.setText(QCoreApplication.translate("Parser_UI", u"test4", None))
+        self.label.setText(QCoreApplication.translate("Parser_UI", u"<html><head/><body><p>JParser v0.0.5</p></body></html>", None))
 #if QT_CONFIG(tooltip)
         self.xlsRawImportPage_Button.setToolTip(QCoreApplication.translate("Parser_UI", u"Import raw excel file", None))
 #endif // QT_CONFIG(tooltip)
@@ -1257,6 +1390,7 @@ class Ui_Parser_UI(object):
         self.DatabaseConnectionSave_Button_2.setText(QCoreApplication.translate("Parser_UI", u"Save", None))
         self.tableCreate_Button.setText(QCoreApplication.translate("Parser_UI", u"Create", None))
         self.databaseReOrder_Button.setText(QCoreApplication.translate("Parser_UI", u"Re-order Records", None))
+        self.databaseRegenID_Button.setText(QCoreApplication.translate("Parser_UI", u"Regenerate ID", None))
         self.xlsParsedFileImport_LabelButton.setText(QCoreApplication.translate("Parser_UI", u"Excel File Import", None))
         self.xlsParsedFileImport_Line.setText("")
         self.xlsParsedFileImport_Line.setPlaceholderText(QCoreApplication.translate("Parser_UI", u"Click browse to find Excel File", None))

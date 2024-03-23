@@ -5,6 +5,8 @@ from .base_qt_ui.database_record_ui import Ui_Form
 
 
 class DataBaseRecordWidget(QWidget):
+    delete_signal = Signal(int)
+
     def __init__(self, widget_id):
         super(DataBaseRecordWidget, self).__init__()
         self.ui = Ui_Form()

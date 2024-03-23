@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>TitleBar</class>
+ <widget class="QWidget" name="TitleBar">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>967</width>
+    <height>64</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget {
+    background-color: #171a21; /* Steam's Dark Theme Background Color */
+    color: #c6d4df; /* Steam's Text Color */
+    font-size: 12px;
+}
+
+QLabel {
+    background-color: #1b2838; /* Steam's Button Background Color */
+    color: #ffffff; /* White text for buttons */
+    border: 1px solid #1b2838;
+    border-radius: 12px;
+    padding: 5px 10px;
+}
+
+
+QPushButton {
+    background-color: #1b2838; /* Steam's Button Background Color */
+    color: #ffffff; /* White text for buttons */
+    border: 1px solid #1b2838;
+    border-radius: 12px;
+    padding: 5px 10px;
+}
+
+QPushButton:hover {
+    background-color: #2d435e; /* Darker shade on hover */
+}
+
+QPushButton:pressed {
+    background-color: #122031; /* Darker shade when pressed */
+}
+
+QLineEdit {
+    background-color: #1c2735; /* Steam's Input Field Color */
+    border: 1px solid #1c2735;
+    padding: 5px;
+    color: #c6d4df; /* Steam's Text Color */
+    border-radius: 4px;
+}
+
+QLineEdit:focus {
+    border: 1px solid #5a90d8; /* Steam's Accent Color on focus */
+}
+
+QTextEdit {
+    background-color: #1c2735; /* Steam's Input Field Color */
+    border: 1px solid #1c2735;
+    padding: 5px;
+    color: #c6d4df; /* Steam's Text Color */
+    border-radius: 4px;
+}
+
+QTextEdit:focus {
+    border: 1px solid #5a90d8; /* Steam's Accent Color on focus */
+}
+
+QScrollBar:vertical {
+    border: none;
+    background: #171a21; /* Steam's Scroll Bar Background */
+    width: 12px;
+    margin: 0px 0px 0px 0px;
+}
+
+QScrollBar::handle:vertical {
+    background: #5a90d8; /* Steam's Scroll Bar Handle */
+    min-height: 20px;
+    border-radius: 6px;
+}
+
+QScrollBar::add-line:vertical {
+    background: none;
+}
+
+QScrollBar::sub-line:vertical {
+    background: none;
+}
+
+QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
+    background: none;
+}
+
+QProgressBar {
+    border: 1px solid #5a90d8; /* Border color */
+    border-radius: 5px;
+    background-color: #1c2735; /* Background color of the bar */
+    text-align: center;
+}
+
+QProgressBar::chunk {
+    background-color: #5a90d8; /* Color of the progress */
+    width: 20px; /* Width of each progress chunk */
+}
+QRadioButton {
+    color: #c6d4df; /* Text color */
+}
+
+QRadioButton::indicator {
+    width: 14px; /* Size of the radio button */
+    height: 14px;
+    border: 2px solid #5a90d8; /* Border color of the radio button */
+    border-radius: 7px; /* Makes it round */
+}
+
+QRadioButton::indicator:checked {
+    background-color: #5a90d8; /* Color when checked */
+    border: 2px solid #5a90d8; /* Border color when checked */
+}
+
+QRadioButton::indicator:hover {
+    border: 2px solid #5a90d8; /* Border color on hover */
+}
+QCheckBox {
+    color: #c6d4df; /* Text color */
+}
+
+QCheckBox::indicator {
+    width: 14px; /* Size of the checkbox */
+    height: 14px;
+    border: 2px solid #5a90d8; /* Border color of the checkbox */
+    border-radius: 3px; /* Makes it slightly rounded */
+}
+
+QCheckBox::indicator:checked {
+    background-color: #5a90d8; /* Color when checked */
+    border: 2px solid #5a90d8; /* Border color when checked */
+}
+
+QCheckBox::indicator:hover {
+    border: 2px solid #5a90d8; /* Border color on hover */
+}
+QDialogButtonBox {
+    background-color: #1c2735; /* Background color */
+}
+
+QDialogButtonBox QPushButton {
+    background-color: #7289da; /* Button background color */
+    color: #ffffff; /* Button text color */
+    border: 1px solid #7289da; /* Button border color */
+    border-radius: 4px;
+    padding: 5px 10px;
+    margin-right: 5px;
+}
+
+QDialogButtonBox QPushButton:hover {
+    background-color: #677bc4; /* Darker shade on hover */
+}
+
+QDialogButtonBox QPushButton:pressed {
+    background-color: #5865a6; /* Darker shade when pressed */
+}
+
+QToolTip {
+    border: 1px solid #c8c8c8;
+	background-color: #171a21; /* Steam's Dark Theme Background Color */
+    color: #c6d4df; /* Steam's Text Color */
+    font-size: 12px;
+	border-radius:5px;
+    }</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QFrame" name="titlebar_frame">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+	border:none;
+	border-radius: 8px;
+	max-width: 16px;
+	max-height: 16px;
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+#btn_minimize {
+    background-color: #4AE137;
+}
+#btn_minimize:hover {
+    background-color: #4DFD36;
+}
+#btn_minimize:pressed {
+    background-color: #21A80F;
+}
+
+#btn_maximize_restore {
+    background-color: #FDCE36;
+}
+
+#btn_maximize_restore:hover {
+    background-color: #FCFF34;
+}
+#btn_maximize_restore:pressed {
+    background-color: #BCBF05;
+}
+
+#btn_close {
+    background-color: #D54040;
+}
+#btn_close:hover {
+    background-color: #F82D2D;
+}
+#btn_close:pressed {
+    background-color: #A90808;
+}
+QLabel {
+    font-family: &quot;Microsoft Sans Serif&quot;, &quot;Arial&quot;, &quot;Times New Roman&quot;; /* Use a fallback font */
+    font-size: 14px;
+    font-weight: bold;
+	border:none;
+	background-color:transparent;
+}</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QLabel" name="label">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+          <horstretch>6</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>776</width>
+          <height>283</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;JParser v0.0.5&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="textFormat">
+         <enum>Qt::RichText</enum>
+        </property>
+        <property name="scaledContents">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btn_minimize">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+          <horstretch>1</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16</width>
+          <height>16</height>
+         </size>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btn_maximize_restore">
+        <property name="maximumSize">
+         <size>
+          <width>16</width>
+          <height>16</height>
+         </size>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btn_close">
+        <property name="maximumSize">
+         <size>
+          <width>16</width>
+          <height>16</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="icons.qrc"/>
+ </resources>
+ <connections/>
+</ui>

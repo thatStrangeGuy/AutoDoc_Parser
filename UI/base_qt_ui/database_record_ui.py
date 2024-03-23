@@ -18,7 +18,7 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
 from PySide6.QtWidgets import (QApplication, QComboBox, QFrame, QHBoxLayout,
     QLabel, QLineEdit, QPushButton, QSizePolicy,
     QVBoxLayout, QWidget)
-from . import icons_rc
+from UI.base_qt_ui import icons_rc
 
 class Ui_Form(object):
     def setupUi(self, Form):
