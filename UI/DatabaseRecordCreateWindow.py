@@ -1,7 +1,7 @@
 from PySide6.QtWidgets import QWidget, QApplication
 from PySide6.QtCore import Signal, Slot
 
-from .base_qt_ui.database_record_create_ui import Ui_Form
+from UI.base_qt_ui.database_record_create_ui import Ui_Form
 
 
 class DataBaseRecordCreateWidget(QWidget):

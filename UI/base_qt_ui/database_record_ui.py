@@ -17,7 +17,7 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QComboBox, QFrame, QHBoxLayout,
     QLabel, QLineEdit, QPushButton, QSizePolicy,
-    QVBoxLayout, QWidget)
+    QSpinBox, QVBoxLayout, QWidget)
 from UI.base_qt_ui import icons_rc
 
 class Ui_Form(object):
@@ -179,6 +179,34 @@ class Ui_Form(object):
 "QDialogButtonBox QPushButton:pressed {\n"
 "    background-color: #5865a6; /* Darker shade when pressed */\n"
 "}\n"
+"QSpinBox {\n"
+"    color: #c6d4df; /* Text color */\n"
+"    background-color: #1c2735; /* Background color */\n"
+"    border: 1px solid #5a90d8; /* Border color */\n"
+"    padding: 2px 5px;\n"
+"    border-radius: 4px;\n"
+"}\n"
+"QSpinBox::up-button, QSpinBox::down-button {\n"
+"    background-color: #7289da; /* Button background color */\n"
+"    border: 1px solid #7289da; /* Button border color */\n"
+"    border-radius: 4px;\n"
+"    width: 15px;\n"
+"}\n"
+"\n"
+"QSpinBox::up-button:hover, QSpinBox::down-button:hover {\n"
+"    background-color: #677bc4; /* Darker shade on hover */\n"
+"}\n"
+"\n"
+"QSpinBox::up-button:pressed, QSpinBox::down-button:pressed {\n"
+"    background-color: #5865a6; /* Darker shade when pressed */\n"
+"}\n"
+"\n"
+"QSpinBox::up-arrow, QSpinBox::down-arrow {\n"
+"    color: #c6d4df; /* Arrow color */\n"
+"    font-size: 10"
+                        "px; /* Arrow size */\n"
+"}\n"
+"\n"
 "")
         self.verticalLayout = QVBoxLayout(Form)
         self.verticalLayout.setObjectName(u"verticalLayout")
@@ -444,12 +472,10 @@ class Ui_Form(object):
 
         self.verticalLayout_4.addWidget(self.databaseRecordOrderID_Label)
 
-        self.databaseRecordOrderID_Line = QLineEdit(self.databaseRecordOrderID_frame)
-        self.databaseRecordOrderID_Line.setObjectName(u"databaseRecordOrderID_Line")
-        sizePolicy2.setHeightForWidth(self.databaseRecordOrderID_Line.sizePolicy().hasHeightForWidth())
-        self.databaseRecordOrderID_Line.setSizePolicy(sizePolicy2)
+        self.databaseRecordOrderID_spinBox = QSpinBox(self.databaseRecordOrderID_frame)
+        self.databaseRecordOrderID_spinBox.setObjectName(u"databaseRecordOrderID_spinBox")
 
-        self.verticalLayout_4.addWidget(self.databaseRecordOrderID_Line)
+        self.verticalLayout_4.addWidget(self.databaseRecordOrderID_spinBox)
 
 
         self.horizontalLayout.addWidget(self.databaseRecordOrderID_frame)

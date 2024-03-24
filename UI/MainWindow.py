@@ -45,6 +45,7 @@ class MainWindow(QMainWindow):
 
     @Slot(str)
     def open_xls_raw_file(self):
+        self.ui.columnList_ComboBox.clear()
         self.raw_xls_filepath = file_controler.browse_filepath(
             defaultDir=str(Path().absolute().joinpath("raw_files")),
             filter="Excel files files(*.xlsx *.xls)"

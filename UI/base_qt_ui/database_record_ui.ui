@@ -169,6 +169,33 @@ QDialogButtonBox QPushButton:hover {
 QDialogButtonBox QPushButton:pressed {
     background-color: #5865a6; /* Darker shade when pressed */
 }
+QSpinBox {
+    color: #c6d4df; /* Text color */
+    background-color: #1c2735; /* Background color */
+    border: 1px solid #5a90d8; /* Border color */
+    padding: 2px 5px;
+    border-radius: 4px;
+}
+QSpinBox::up-button, QSpinBox::down-button {
+    background-color: #7289da; /* Button background color */
+    border: 1px solid #7289da; /* Button border color */
+    border-radius: 4px;
+    width: 15px;
+}
+
+QSpinBox::up-button:hover, QSpinBox::down-button:hover {
+    background-color: #677bc4; /* Darker shade on hover */
+}
+
+QSpinBox::up-button:pressed, QSpinBox::down-button:pressed {
+    background-color: #5865a6; /* Darker shade when pressed */
+}
+
+QSpinBox::up-arrow, QSpinBox::down-arrow {
+    color: #c6d4df; /* Arrow color */
+    font-size: 10px; /* Arrow size */
+}
+
 </string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
@@ -627,14 +654,7 @@ QDialogButtonBox QPushButton:pressed {
           </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="databaseRecordOrderID_Line">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-             <horstretch>1</horstretch>
-             <verstretch>2</verstretch>
-            </sizepolicy>
-           </property>
-          </widget>
+          <widget class="QSpinBox" name="databaseRecordOrderID_spinBox"/>
          </item>
         </layout>
        </widget>

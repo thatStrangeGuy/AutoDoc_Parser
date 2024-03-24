@@ -2,6 +2,7 @@ import logging
 from pathlib import Path
 
 import pandas
+from pandas import DataFrame
 
 logger = logging.getLogger('app.xls_controller')
 
@@ -20,10 +21,10 @@ def excel_to_dataframe(path_file: Path | str):
         return [None, _ex]
 
 
-
 def get_columns(path_file):
     try:
         df = excel_to_dataframe(path_file)
-        return df.columns.tolist()
+        if isinstance(df, DataFrame):
+            return df.columns.tolist()
     except FileNotFoundError:
         raise FileNotFoundError
