@@ -1,5 +1,8 @@
 <RCC>
   <qresource prefix="file_open">
+    <file>icons/icons8-reload-100.png</file>
+    <file>icons/icons8-reload-100.png</file>
+    <file>icons/icons8-information-80.png</file>
     <file>icons/icons8-template-80.png</file>
     <file>icons/icons8-error-64.png</file>
     <file>icons/icons8-exit-80_RED.png</file>

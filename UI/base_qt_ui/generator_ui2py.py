@@ -25,13 +25,13 @@ def generate_all_ui2py(path: Path | str = Path().absolute()):
                 temp_file = rc_file.read()
             test = temp_file.replace(f"import {i.stem}_rc",
                                      f"from UI.base_qt_ui import {i.stem}_rc")
-            time.sleep(0.5)
+            time.sleep(5)
             try:
                 with open(f"{j.parent.absolute().joinpath(j.stem)}.py", "w") as ui_file:
                     ui_file.write(test)
             except PermissionError:
                 print("File didnt closed so fast, retry...")
-                time.sleep(3)
+                time.sleep(5)
                 with open(f"{j.parent.absolute().joinpath(j.stem)}.py", "w") as ui_file:
                     ui_file.write(test)
 

@@ -865,7 +865,7 @@ class Ui_Parser_UI(object):
         self.scrollArea.setAlignment(Qt.AlignHCenter|Qt.AlignTop)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 96, 26))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 66, 20))
         self.verticalLayout_22 = QVBoxLayout(self.scrollAreaWidgetContents)
         self.verticalLayout_22.setObjectName(u"verticalLayout_22")
         self.databaseRecords_layout = QVBoxLayout()
@@ -1303,6 +1303,16 @@ class Ui_Parser_UI(object):
 
         self.verticalLayout_15.addWidget(self.defaultDatabaseConSave_Button)
 
+        self.DatabaseEditRestoreDefault_Button = QPushButton(self.configEdit_Page)
+        self.DatabaseEditRestoreDefault_Button.setObjectName(u"DatabaseEditRestoreDefault_Button")
+        sizePolicy7.setHeightForWidth(self.DatabaseEditRestoreDefault_Button.sizePolicy().hasHeightForWidth())
+        self.DatabaseEditRestoreDefault_Button.setSizePolicy(sizePolicy7)
+        icon20 = QIcon()
+        icon20.addFile(u":/file_open/icons/icons8-reload-100.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.DatabaseEditRestoreDefault_Button.setIcon(icon20)
+
+        self.verticalLayout_15.addWidget(self.DatabaseEditRestoreDefault_Button)
+
         self.verticalSpacer_3 = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
 
         self.verticalLayout_15.addItem(self.verticalSpacer_3)
@@ -1325,7 +1335,7 @@ class Ui_Parser_UI(object):
 
         self.retranslateUi(Parser_UI)
 
-        self.stackedWidget.setCurrentIndex(0)
+        self.stackedWidget.setCurrentIndex(3)
         self.defaultDatabaseTypeConfig_ComboBox.setCurrentIndex(0)
 
 
@@ -1417,5 +1427,6 @@ class Ui_Parser_UI(object):
         self.defaultDatabaseConStringGen_Button.setText(QCoreApplication.translate("Parser_UI", u"Generate Connection String", None))
         self.defaultDatabaseConTest_Button_2.setText(QCoreApplication.translate("Parser_UI", u"Test", None))
         self.defaultDatabaseConSave_Button.setText(QCoreApplication.translate("Parser_UI", u"Save Config", None))
+        self.DatabaseEditRestoreDefault_Button.setText(QCoreApplication.translate("Parser_UI", u"Restore Default Config", None))
     # retranslateUi
 

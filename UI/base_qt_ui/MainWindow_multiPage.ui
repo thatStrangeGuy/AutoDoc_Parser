@@ -507,7 +507,7 @@ QLabel {
              <enum>Qt::NoContextMenu</enum>
             </property>
             <property name="currentIndex">
-             <number>0</number>
+             <number>3</number>
             </property>
             <widget class="QWidget" name="xlsRawImport_Page">
              <layout class="QHBoxLayout" name="horizontalLayout_3">
@@ -1260,8 +1260,8 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>96</width>
-                   <height>26</height>
+                   <width>66</width>
+                   <height>20</height>
                   </rect>
                  </property>
                  <layout class="QVBoxLayout" name="verticalLayout_22">
@@ -1996,6 +1996,23 @@ QPushButton:pressed {
                 <property name="icon">
                  <iconset resource="icons.qrc">
                   <normaloff>:/file_open/icons/icons8-save-100.png</normaloff>:/file_open/icons/icons8-save-100.png</iconset>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="DatabaseEditRestoreDefault_Button">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                  <horstretch>2</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="text">
+                 <string>Restore Default Config</string>
+                </property>
+                <property name="icon">
+                 <iconset resource="icons.qrc">
+                  <normaloff>:/file_open/icons/icons8-reload-100.png</normaloff>:/file_open/icons/icons8-reload-100.png</iconset>
                 </property>
                </widget>
               </item>
