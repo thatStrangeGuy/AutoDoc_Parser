@@ -64,7 +64,7 @@ class MainWindow(QMainWindow):
         else:
             self.raw_excel_df, error = xls_controller.excel_to_dataframe(path.absolute())
             if self.raw_excel_df is None:
-                self.ErrorMessage_Signal.emit(message)
+                self.ErrorMessage_Signal.emit(error)
                 return
             else:
                 columns = self.raw_excel_df.columns.tolist()
