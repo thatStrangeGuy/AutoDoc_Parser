@@ -11,10 +11,14 @@ def excel_to_dataframe(path_file: Path | str):
         if isinstance(path_file, Path):
             path_file = str(path_file)
         df = pandas.read_excel(path_file)
-        return df
+        return [df, None]
     except FileNotFoundError as _ex:
         logger.critical(f"Error: File not found: {_ex}")
-        raise FileNotFoundError
+        return [None, _ex]
+    except Exception as _ex:
+        logger.critical(_ex)
+        return [None, _ex]
+
 
 
 def get_columns(path_file):

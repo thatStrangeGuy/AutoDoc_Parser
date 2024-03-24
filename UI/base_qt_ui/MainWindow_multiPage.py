@@ -865,7 +865,7 @@ class Ui_Parser_UI(object):
         self.scrollArea.setAlignment(Qt.AlignHCenter|Qt.AlignTop)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 66, 20))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 642, 318))
         self.verticalLayout_22 = QVBoxLayout(self.scrollAreaWidgetContents)
         self.verticalLayout_22.setObjectName(u"verticalLayout_22")
         self.databaseRecords_layout = QVBoxLayout()
@@ -1113,6 +1113,67 @@ class Ui_Parser_UI(object):
         self.verticalLayout_15 = QVBoxLayout(self.configEdit_Page)
         self.verticalLayout_15.setObjectName(u"verticalLayout_15")
         self.verticalLayout_15.setSizeConstraint(QLayout.SetDefaultConstraint)
+        self.defaultDatabasePath_MainFrame = QFrame(self.configEdit_Page)
+        self.defaultDatabasePath_MainFrame.setObjectName(u"defaultDatabasePath_MainFrame")
+        self.defaultDatabasePath_MainFrame.setFrameShape(QFrame.StyledPanel)
+        self.defaultDatabasePath_MainFrame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_23 = QVBoxLayout(self.defaultDatabasePath_MainFrame)
+        self.verticalLayout_23.setObjectName(u"verticalLayout_23")
+        self.defaultDatabasePath_LabelButton_4 = QPushButton(self.defaultDatabasePath_MainFrame)
+        self.defaultDatabasePath_LabelButton_4.setObjectName(u"defaultDatabasePath_LabelButton_4")
+        self.defaultDatabasePath_LabelButton_4.setEnabled(False)
+        self.defaultDatabasePath_LabelButton_4.setStyleSheet(u"QPushButton {\n"
+"    background-color: rgba(255,255,255,30); /* Steam's Button Background Color */\n"
+"    color: #ffffff; /* White text for buttons */\n"
+"    border: 1px solid #1b2838;\n"
+"    border-radius: 12px;\n"
+"    padding: 5px 10px;\n"
+"}")
+        self.defaultDatabasePath_LabelButton_4.setIcon(icon)
+
+        self.verticalLayout_23.addWidget(self.defaultDatabasePath_LabelButton_4)
+
+        self.defaultDatabasePath_frame_5 = QFrame(self.defaultDatabasePath_MainFrame)
+        self.defaultDatabasePath_frame_5.setObjectName(u"defaultDatabasePath_frame_5")
+        sizePolicy5.setHeightForWidth(self.defaultDatabasePath_frame_5.sizePolicy().hasHeightForWidth())
+        self.defaultDatabasePath_frame_5.setSizePolicy(sizePolicy5)
+        self.defaultDatabasePath_frame_5.setFrameShape(QFrame.StyledPanel)
+        self.defaultDatabasePath_frame_5.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_22 = QHBoxLayout(self.defaultDatabasePath_frame_5)
+        self.horizontalLayout_22.setObjectName(u"horizontalLayout_22")
+        self.defaultDatabasePath_Line_4 = QLineEdit(self.defaultDatabasePath_frame_5)
+        self.defaultDatabasePath_Line_4.setObjectName(u"defaultDatabasePath_Line_4")
+        self.defaultDatabasePath_Line_4.setEnabled(True)
+        sizePolicy6.setHeightForWidth(self.defaultDatabasePath_Line_4.sizePolicy().hasHeightForWidth())
+        self.defaultDatabasePath_Line_4.setSizePolicy(sizePolicy6)
+        self.defaultDatabasePath_Line_4.setReadOnly(True)
+
+        self.horizontalLayout_22.addWidget(self.defaultDatabasePath_Line_4)
+
+        self.defaultDatabasePathBrowse_Button_4 = QPushButton(self.defaultDatabasePath_frame_5)
+        self.defaultDatabasePathBrowse_Button_4.setObjectName(u"defaultDatabasePathBrowse_Button_4")
+        sizePolicy7.setHeightForWidth(self.defaultDatabasePathBrowse_Button_4.sizePolicy().hasHeightForWidth())
+        self.defaultDatabasePathBrowse_Button_4.setSizePolicy(sizePolicy7)
+        self.defaultDatabasePathBrowse_Button_4.setStyleSheet(u".material-icons.orange600 { color: #FB8C00; }")
+        self.defaultDatabasePathBrowse_Button_4.setIcon(icon5)
+
+        self.horizontalLayout_22.addWidget(self.defaultDatabasePathBrowse_Button_4)
+
+
+        self.verticalLayout_23.addWidget(self.defaultDatabasePath_frame_5)
+
+
+        self.verticalLayout_15.addWidget(self.defaultDatabasePath_MainFrame)
+
+        self.line_10 = QFrame(self.configEdit_Page)
+        self.line_10.setObjectName(u"line_10")
+        self.line_10.setFrameShadow(QFrame.Raised)
+        self.line_10.setLineWidth(20)
+        self.line_10.setMidLineWidth(1)
+        self.line_10.setFrameShape(QFrame.HLine)
+
+        self.verticalLayout_15.addWidget(self.line_10)
+
         self.frame_2 = QFrame(self.configEdit_Page)
         self.frame_2.setObjectName(u"frame_2")
         self.frame_2.setMaximumSize(QSize(16777215, 100))
@@ -1415,6 +1476,10 @@ class Ui_Parser_UI(object):
         self.parseWordFileExport_Line.setPlaceholderText(QCoreApplication.translate("Parser_UI", u"Click browse to set Word File", None))
         self.parseWordFileExport_Button.setText(QCoreApplication.translate("Parser_UI", u"Browse", None))
         self.parseWordFileExport_ParseButton.setText(QCoreApplication.translate("Parser_UI", u"Parse", None))
+        self.defaultDatabasePath_LabelButton_4.setText(QCoreApplication.translate("Parser_UI", u"Database Directory", None))
+        self.defaultDatabasePath_Line_4.setText("")
+        self.defaultDatabasePath_Line_4.setPlaceholderText(QCoreApplication.translate("Parser_UI", u"Click browse to find Database Directory", None))
+        self.defaultDatabasePathBrowse_Button_4.setText(QCoreApplication.translate("Parser_UI", u"Browse", None))
         self.defaultDatabaseTypeName_label.setText(QCoreApplication.translate("Parser_UI", u"Database Type", None))
         self.defaultDatabaseTypeConfig_ComboBox.setItemText(0, QCoreApplication.translate("Parser_UI", u"sqlite3", None))
 

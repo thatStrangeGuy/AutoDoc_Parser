@@ -3,7 +3,7 @@ import sys
 from pathlib import Path
 
 from PySide6.QtGui import QIcon
-from PySide6.QtWidgets import QMainWindow, QVBoxLayout, QWidget, QSizePolicy
+from PySide6.QtWidgets import QMainWindow, QVBoxLayout, QWidget, QSizePolicy, QComboBox
 from PySide6.QtCore import Signal, Slot, QSize, Qt
 from .base_qt_ui.MainWindow_multiPage import Ui_Parser_UI
 from controllers import file_controler, msgbox_controller, xls_controller, db_controller, config_controller
@@ -62,12 +62,16 @@ class MainWindow(QMainWindow):
             self.ErrorMessage_Signal.emit(message)
             return
         else:
-            self.raw_excel_df = xls_controller.excel_to_dataframe(path.absolute())
-            columns = self.raw_excel_df.columns.tolist()
-            self.ui.columnList_ComboBox.clear()
-            for i in columns:
-                self.ui.columnList_ComboBox.addItem(i)
-            self.raw_xls_chosenColumn = self.ui.columnList_ComboBox.currentText()
+            self.raw_excel_df, error = xls_controller.excel_to_dataframe(path.absolute())
+            if self.raw_excel_df is None:
+                self.ErrorMessage_Signal.emit(message)
+                return
+            else:
+                columns = self.raw_excel_df.columns.tolist()
+                self.ui.columnList_ComboBox.clear()
+                for i in columns:
+                    self.ui.columnList_ComboBox.addItem(i)
+                self.raw_xls_chosenColumn = self.ui.columnList_ComboBox.currentText()
 
     @Slot()
     def raw_xls_column_choose(self):
@@ -116,18 +120,25 @@ class MainWindow(QMainWindow):
     @Slot()
     def refresh_page_data(self):
         global config
+        # xlsRawImport_Page
         if self.ui.stackedWidget.currentWidget() == self.ui.xlsRawImport_Page:
             databases, error = db_controller.get_sqlite_databases(config.get('db_dir'))
             if databases is None:
                 self.ErrorMessage_Signal.emit(error)
             elif len(databases) == 0:
                 self.create_First_db()
-                self.refresh_page_data()
+            elif len(databases) > 0:
+                self.fill_list_combobox(self.ui.DatabaseChoice_ComboBox, databases)
 
+        # databaseEdit_Page
         elif self.ui.stackedWidget.currentWidget() == self.ui.databaseEdit_Page:
             print("Current page is editing database")  # TODO: Refreshing page if current page is editing database
+
+        # wordParseXls_page
         elif self.ui.stackedWidget.currentWidget() == self.ui.wordParseXls_page:
             print("Current page is parse word")  # TODO: Refreshing page if current page is Word Parsing page
+
+        # configEdit_Page
         elif self.ui.stackedWidget.currentWidget() == self.ui.configEdit_Page:
             print("Current page is config page")  # TODO: Refreshing page if current page is config editing page
 
@@ -174,4 +185,13 @@ class MainWindow(QMainWindow):
                     self.ErrorMessage_Signal.emit(error)
                 else:
                     self.InfoMessage_Signal.emit(result, "")
+
+    @staticmethod
+    def fill_list_combobox(combobox: QComboBox, data: list | tuple):
+        combobox.clear()
+        for i in data:
+            if isinstance(i, Path):
+                i = i.stem
+            combobox.addItem(i)
+            combobox.setCurrentIndex(0)
 

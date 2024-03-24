@@ -21,7 +21,7 @@ def generate_all_ui2py(path: Path | str = Path().absolute()):
         for numj, j in enumerate(ui_file_paths):
             print(
                 f"Working with UI file: {j.stem}: {numj + 1} / {len(ui_file_paths)}  --- {numj / len(ui_file_paths) * 100} %")
-            with open(f"{j.parent.absolute().joinpath(j.stem)}.py", "r") as rc_file:
+            with open(f"{j.absolute().parent.joinpath(j.stem)}.py", "r") as rc_file:
                 temp_file = rc_file.read()
             test = temp_file.replace(f"import {i.stem}_rc",
                                      f"from UI.base_qt_ui import {i.stem}_rc")
@@ -34,6 +34,7 @@ def generate_all_ui2py(path: Path | str = Path().absolute()):
                 time.sleep(5)
                 with open(f"{j.parent.absolute().joinpath(j.stem)}.py", "w") as ui_file:
                     ui_file.write(test)
+    os.popen(r"pyside6-uic database_record_create_ui.ui > database_record_create_ui.py")
 
 
 if __name__ == '__main__':
