@@ -5,7 +5,7 @@ from pathlib import Path
 from PySide6.QtGui import QIcon
 from PySide6.QtWidgets import QMainWindow, QVBoxLayout, QWidget, QSizePolicy, QComboBox
 from PySide6.QtCore import Signal, Slot, QSize, Qt
-from .base_qt_ui.MainWindow_multiPage import Ui_Parser_UI
+from UI.base_qt_ui.MainWindow_multiPage import Ui_Parser_UI
 from controllers import file_controler, msgbox_controller, xls_controller, db_controller, config_controller
 from controllers.FunctionWrapper import FunctionWrapper
 from .title_bar import TitleBar
