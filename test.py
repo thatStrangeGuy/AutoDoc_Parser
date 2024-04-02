@@ -1,10 +1,10 @@
-a = "1,7"
+a = "2, , , , ,,,,,,,,                        ,,,,               , 3"
 
 test = "ABCDEFGHIJKLMNOPQRSTUVWXYZabc"
 
 
 def split_string(ranges_string, input_str):
-    temp_list = list(filter(None, map(str.strip, ranges_string.split(","))))
+    temp_list = list(filter(None, map(lambda x: None if x == '' else x, map(str.strip, ranges_string.split(",")))))
     try:
         if not (all(list(map(str.isdigit, map(str.strip, temp_list))))):
             raise ValueError(f"Invalid input {ranges_string}")

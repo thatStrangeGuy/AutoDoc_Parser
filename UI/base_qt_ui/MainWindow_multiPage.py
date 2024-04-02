@@ -226,6 +226,7 @@ class Ui_Parser_UI(object):
         sizePolicy.setVerticalStretch(1)
         sizePolicy.setHeightForWidth(self.titlebar_frame.sizePolicy().hasHeightForWidth())
         self.titlebar_frame.setSizePolicy(sizePolicy)
+        self.titlebar_frame.setMaximumSize(QSize(16777215, 45))
         self.titlebar_frame.setStyleSheet(u"QPushButton {\n"
 "	border:none;\n"
 "	border-radius: 8px;\n"
@@ -300,7 +301,7 @@ class Ui_Parser_UI(object):
         self.frame_3.setObjectName(u"frame_3")
         sizePolicy2 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Preferred)
         sizePolicy2.setHorizontalStretch(0)
-        sizePolicy2.setVerticalStretch(9)
+        sizePolicy2.setVerticalStretch(10)
         sizePolicy2.setHeightForWidth(self.frame_3.sizePolicy().hasHeightForWidth())
         self.frame_3.setSizePolicy(sizePolicy2)
         self.frame_3.setStyleSheet(u"")
@@ -506,11 +507,8 @@ class Ui_Parser_UI(object):
 
         self.databaseLoad_MainFrame = QFrame(self.xlsRawFileImport_Frame)
         self.databaseLoad_MainFrame.setObjectName(u"databaseLoad_MainFrame")
-        sizePolicy8 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Preferred)
-        sizePolicy8.setHorizontalStretch(0)
-        sizePolicy8.setVerticalStretch(3)
-        sizePolicy8.setHeightForWidth(self.databaseLoad_MainFrame.sizePolicy().hasHeightForWidth())
-        self.databaseLoad_MainFrame.setSizePolicy(sizePolicy8)
+        sizePolicy.setHeightForWidth(self.databaseLoad_MainFrame.sizePolicy().hasHeightForWidth())
+        self.databaseLoad_MainFrame.setSizePolicy(sizePolicy)
         self.databaseLoad_MainFrame.setFrameShape(QFrame.StyledPanel)
         self.databaseLoad_MainFrame.setFrameShadow(QFrame.Raised)
         self.verticalLayout_4 = QVBoxLayout(self.databaseLoad_MainFrame)
@@ -518,11 +516,12 @@ class Ui_Parser_UI(object):
         self.databaseBrowse_LabelButton = QPushButton(self.databaseLoad_MainFrame)
         self.databaseBrowse_LabelButton.setObjectName(u"databaseBrowse_LabelButton")
         self.databaseBrowse_LabelButton.setEnabled(False)
-        sizePolicy9 = QSizePolicy(QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Preferred)
-        sizePolicy9.setHorizontalStretch(0)
-        sizePolicy9.setVerticalStretch(1)
-        sizePolicy9.setHeightForWidth(self.databaseBrowse_LabelButton.sizePolicy().hasHeightForWidth())
-        self.databaseBrowse_LabelButton.setSizePolicy(sizePolicy9)
+        sizePolicy8 = QSizePolicy(QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Preferred)
+        sizePolicy8.setHorizontalStretch(0)
+        sizePolicy8.setVerticalStretch(1)
+        sizePolicy8.setHeightForWidth(self.databaseBrowse_LabelButton.sizePolicy().hasHeightForWidth())
+        self.databaseBrowse_LabelButton.setSizePolicy(sizePolicy8)
+        self.databaseBrowse_LabelButton.setMaximumSize(QSize(16777215, 30))
         self.databaseBrowse_LabelButton.setStyleSheet(u"QPushButton {\n"
 "    background-color: rgba(255,255,255,30); /* Steam's Button Background Color */\n"
 "    color: #ffffff; /* White text for buttons */\n"
@@ -539,22 +538,20 @@ class Ui_Parser_UI(object):
 
         self.databaseConnect_Frame = QFrame(self.databaseLoad_MainFrame)
         self.databaseConnect_Frame.setObjectName(u"databaseConnect_Frame")
-        sizePolicy10 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Preferred)
-        sizePolicy10.setHorizontalStretch(0)
-        sizePolicy10.setVerticalStretch(5)
-        sizePolicy10.setHeightForWidth(self.databaseConnect_Frame.sizePolicy().hasHeightForWidth())
-        self.databaseConnect_Frame.setSizePolicy(sizePolicy10)
+        sizePolicy9 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Preferred)
+        sizePolicy9.setHorizontalStretch(0)
+        sizePolicy9.setVerticalStretch(3)
+        sizePolicy9.setHeightForWidth(self.databaseConnect_Frame.sizePolicy().hasHeightForWidth())
+        self.databaseConnect_Frame.setSizePolicy(sizePolicy9)
+        self.databaseConnect_Frame.setMaximumSize(QSize(16777215, 80))
         self.databaseConnect_Frame.setFrameShape(QFrame.StyledPanel)
         self.databaseConnect_Frame.setFrameShadow(QFrame.Raised)
         self.verticalLayout_5 = QVBoxLayout(self.databaseConnect_Frame)
         self.verticalLayout_5.setObjectName(u"verticalLayout_5")
         self.databaseBrowse_Frame = QFrame(self.databaseConnect_Frame)
         self.databaseBrowse_Frame.setObjectName(u"databaseBrowse_Frame")
-        sizePolicy11 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Preferred)
-        sizePolicy11.setHorizontalStretch(0)
-        sizePolicy11.setVerticalStretch(4)
-        sizePolicy11.setHeightForWidth(self.databaseBrowse_Frame.sizePolicy().hasHeightForWidth())
-        self.databaseBrowse_Frame.setSizePolicy(sizePolicy11)
+        sizePolicy9.setHeightForWidth(self.databaseBrowse_Frame.sizePolicy().hasHeightForWidth())
+        self.databaseBrowse_Frame.setSizePolicy(sizePolicy9)
         self.databaseBrowse_Frame.setMinimumSize(QSize(0, 50))
         self.databaseBrowse_Frame.setStyleSheet(u"")
         self.databaseBrowse_Frame.setFrameShape(QFrame.StyledPanel)
@@ -563,21 +560,23 @@ class Ui_Parser_UI(object):
         self.horizontalLayout_5.setObjectName(u"horizontalLayout_5")
         self.DatabaseChoice_ComboBox = QComboBox(self.databaseBrowse_Frame)
         self.DatabaseChoice_ComboBox.setObjectName(u"DatabaseChoice_ComboBox")
-        sizePolicy12 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Preferred)
-        sizePolicy12.setHorizontalStretch(6)
-        sizePolicy12.setVerticalStretch(2)
-        sizePolicy12.setHeightForWidth(self.DatabaseChoice_ComboBox.sizePolicy().hasHeightForWidth())
-        self.DatabaseChoice_ComboBox.setSizePolicy(sizePolicy12)
+        sizePolicy10 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Preferred)
+        sizePolicy10.setHorizontalStretch(6)
+        sizePolicy10.setVerticalStretch(2)
+        sizePolicy10.setHeightForWidth(self.DatabaseChoice_ComboBox.sizePolicy().hasHeightForWidth())
+        self.DatabaseChoice_ComboBox.setSizePolicy(sizePolicy10)
+        self.DatabaseChoice_ComboBox.setStyleSheet(u"")
+        self.DatabaseChoice_ComboBox.setInputMethodHints(Qt.ImhNone)
 
         self.horizontalLayout_5.addWidget(self.DatabaseChoice_ComboBox)
 
         self.DatabaseConnect_Button = QPushButton(self.databaseBrowse_Frame)
         self.DatabaseConnect_Button.setObjectName(u"DatabaseConnect_Button")
-        sizePolicy13 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Fixed)
-        sizePolicy13.setHorizontalStretch(1)
-        sizePolicy13.setVerticalStretch(0)
-        sizePolicy13.setHeightForWidth(self.DatabaseConnect_Button.sizePolicy().hasHeightForWidth())
-        self.DatabaseConnect_Button.setSizePolicy(sizePolicy13)
+        sizePolicy11 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Fixed)
+        sizePolicy11.setHorizontalStretch(1)
+        sizePolicy11.setVerticalStretch(0)
+        sizePolicy11.setHeightForWidth(self.DatabaseConnect_Button.sizePolicy().hasHeightForWidth())
+        self.DatabaseConnect_Button.setSizePolicy(sizePolicy11)
         icon8 = QIcon()
         icon8.addFile(u":/file_open/icons/icons8-connect-100.png", QSize(), QIcon.Normal, QIcon.Off)
         self.DatabaseConnect_Button.setIcon(icon8)
@@ -587,49 +586,37 @@ class Ui_Parser_UI(object):
 
         self.verticalLayout_5.addWidget(self.databaseBrowse_Frame)
 
-        self.tableBrowse_Frame = QFrame(self.databaseConnect_Frame)
-        self.tableBrowse_Frame.setObjectName(u"tableBrowse_Frame")
-        sizePolicy11.setHeightForWidth(self.tableBrowse_Frame.sizePolicy().hasHeightForWidth())
-        self.tableBrowse_Frame.setSizePolicy(sizePolicy11)
-        self.tableBrowse_Frame.setMinimumSize(QSize(0, 49))
-        self.tableBrowse_Frame.setFrameShape(QFrame.StyledPanel)
-        self.tableBrowse_Frame.setFrameShadow(QFrame.Raised)
-        self.horizontalLayout_6 = QHBoxLayout(self.tableBrowse_Frame)
-        self.horizontalLayout_6.setObjectName(u"horizontalLayout_6")
-        self.TableChoice_ComboBox = QComboBox(self.tableBrowse_Frame)
-        self.TableChoice_ComboBox.setObjectName(u"TableChoice_ComboBox")
-        sizePolicy12.setHeightForWidth(self.TableChoice_ComboBox.sizePolicy().hasHeightForWidth())
-        self.TableChoice_ComboBox.setSizePolicy(sizePolicy12)
-
-        self.horizontalLayout_6.addWidget(self.TableChoice_ComboBox)
-
-        self.DatabaseConnectionSave_Button = QPushButton(self.tableBrowse_Frame)
-        self.DatabaseConnectionSave_Button.setObjectName(u"DatabaseConnectionSave_Button")
-        sizePolicy13.setHeightForWidth(self.DatabaseConnectionSave_Button.sizePolicy().hasHeightForWidth())
-        self.DatabaseConnectionSave_Button.setSizePolicy(sizePolicy13)
-        icon9 = QIcon()
-        icon9.addFile(u":/file_open/icons/icons8-save-100.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.DatabaseConnectionSave_Button.setIcon(icon9)
-
-        self.horizontalLayout_6.addWidget(self.DatabaseConnectionSave_Button)
-
-
-        self.verticalLayout_5.addWidget(self.tableBrowse_Frame)
-
 
         self.verticalLayout_4.addWidget(self.databaseConnect_Frame)
 
-        self.databaseEdit_Button = QPushButton(self.databaseLoad_MainFrame)
+        self.frame_4 = QFrame(self.databaseLoad_MainFrame)
+        self.frame_4.setObjectName(u"frame_4")
+        sizePolicy12 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Preferred)
+        sizePolicy12.setHorizontalStretch(0)
+        sizePolicy12.setVerticalStretch(0)
+        sizePolicy12.setHeightForWidth(self.frame_4.sizePolicy().hasHeightForWidth())
+        self.frame_4.setSizePolicy(sizePolicy12)
+        self.frame_4.setStyleSheet(u"")
+        self.frame_4.setFrameShape(QFrame.StyledPanel)
+        self.frame_4.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_18 = QVBoxLayout(self.frame_4)
+        self.verticalLayout_18.setObjectName(u"verticalLayout_18")
+        self.databaseEdit_Button = QPushButton(self.frame_4)
         self.databaseEdit_Button.setObjectName(u"databaseEdit_Button")
-        sizePolicy14 = QSizePolicy(QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Fixed)
-        sizePolicy14.setHorizontalStretch(0)
-        sizePolicy14.setVerticalStretch(1)
-        sizePolicy14.setHeightForWidth(self.databaseEdit_Button.sizePolicy().hasHeightForWidth())
-        self.databaseEdit_Button.setSizePolicy(sizePolicy14)
+        sizePolicy13 = QSizePolicy(QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Fixed)
+        sizePolicy13.setHorizontalStretch(1)
+        sizePolicy13.setVerticalStretch(1)
+        sizePolicy13.setHeightForWidth(self.databaseEdit_Button.sizePolicy().hasHeightForWidth())
+        self.databaseEdit_Button.setSizePolicy(sizePolicy13)
+        self.databaseEdit_Button.setMaximumSize(QSize(16777215, 16777215))
+        self.databaseEdit_Button.setStyleSheet(u"")
         self.databaseEdit_Button.setIcon(icon1)
         self.databaseEdit_Button.setIconSize(QSize(30, 30))
 
-        self.verticalLayout_4.addWidget(self.databaseEdit_Button)
+        self.verticalLayout_18.addWidget(self.databaseEdit_Button)
+
+
+        self.verticalLayout_4.addWidget(self.frame_4)
 
 
         self.verticalLayout_3.addWidget(self.databaseLoad_MainFrame)
@@ -664,6 +651,7 @@ class Ui_Parser_UI(object):
         self.xlsParsedFilePath_Line.setEnabled(True)
         sizePolicy6.setHeightForWidth(self.xlsParsedFilePath_Line.sizePolicy().hasHeightForWidth())
         self.xlsParsedFilePath_Line.setSizePolicy(sizePolicy6)
+        self.xlsParsedFilePath_Line.setInputMethodHints(Qt.ImhNoEditMenu)
         self.xlsParsedFilePath_Line.setReadOnly(True)
 
         self.horizontalLayout_7.addWidget(self.xlsParsedFilePath_Line)
@@ -697,9 +685,9 @@ class Ui_Parser_UI(object):
 "QPushButton:pressed {\n"
 "    background-color: #122031; /* Darker shade when pressed */\n"
 "}")
-        icon10 = QIcon()
-        icon10.addFile(u":/file_open/icons/icons8-export-excel-100.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.parseToXlsFile_Button.setIcon(icon10)
+        icon9 = QIcon()
+        icon9.addFile(u":/file_open/icons/icons8-export-excel-100.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.parseToXlsFile_Button.setIcon(icon9)
         self.parseToXlsFile_Button.setIconSize(QSize(20, 20))
 
         self.verticalLayout_8.addWidget(self.parseToXlsFile_Button)
@@ -717,8 +705,9 @@ class Ui_Parser_UI(object):
         self.verticalLayout_11.setObjectName(u"verticalLayout_11")
         self.databaseConnect_Frame_2 = QFrame(self.databaseEdit_Page)
         self.databaseConnect_Frame_2.setObjectName(u"databaseConnect_Frame_2")
-        sizePolicy5.setHeightForWidth(self.databaseConnect_Frame_2.sizePolicy().hasHeightForWidth())
-        self.databaseConnect_Frame_2.setSizePolicy(sizePolicy5)
+        sizePolicy.setHeightForWidth(self.databaseConnect_Frame_2.sizePolicy().hasHeightForWidth())
+        self.databaseConnect_Frame_2.setSizePolicy(sizePolicy)
+        self.databaseConnect_Frame_2.setMaximumSize(QSize(16777215, 130))
         self.databaseConnect_Frame_2.setFrameShape(QFrame.StyledPanel)
         self.databaseConnect_Frame_2.setFrameShadow(QFrame.Raised)
         self.verticalLayout_10 = QVBoxLayout(self.databaseConnect_Frame_2)
@@ -747,83 +736,46 @@ class Ui_Parser_UI(object):
         self.horizontalLayout_9.setObjectName(u"horizontalLayout_9")
         self.DatabaseChoice_ComboBox_2 = QComboBox(self.databaseBrowse_Frame_2)
         self.DatabaseChoice_ComboBox_2.setObjectName(u"DatabaseChoice_ComboBox_2")
-        sizePolicy15 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Fixed)
-        sizePolicy15.setHorizontalStretch(8)
-        sizePolicy15.setVerticalStretch(0)
-        sizePolicy15.setHeightForWidth(self.DatabaseChoice_ComboBox_2.sizePolicy().hasHeightForWidth())
-        self.DatabaseChoice_ComboBox_2.setSizePolicy(sizePolicy15)
+        sizePolicy14 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Fixed)
+        sizePolicy14.setHorizontalStretch(8)
+        sizePolicy14.setVerticalStretch(0)
+        sizePolicy14.setHeightForWidth(self.DatabaseChoice_ComboBox_2.sizePolicy().hasHeightForWidth())
+        self.DatabaseChoice_ComboBox_2.setSizePolicy(sizePolicy14)
         self.DatabaseChoice_ComboBox_2.setEditable(True)
 
         self.horizontalLayout_9.addWidget(self.DatabaseChoice_ComboBox_2)
 
         self.DatabaseConnect_Button_2 = QPushButton(self.databaseBrowse_Frame_2)
         self.DatabaseConnect_Button_2.setObjectName(u"DatabaseConnect_Button_2")
-        sizePolicy13.setHeightForWidth(self.DatabaseConnect_Button_2.sizePolicy().hasHeightForWidth())
-        self.DatabaseConnect_Button_2.setSizePolicy(sizePolicy13)
+        sizePolicy11.setHeightForWidth(self.DatabaseConnect_Button_2.sizePolicy().hasHeightForWidth())
+        self.DatabaseConnect_Button_2.setSizePolicy(sizePolicy11)
         self.DatabaseConnect_Button_2.setIcon(icon8)
 
         self.horizontalLayout_9.addWidget(self.DatabaseConnect_Button_2)
 
         self.DatabaseCreate_Button = QPushButton(self.databaseBrowse_Frame_2)
         self.DatabaseCreate_Button.setObjectName(u"DatabaseCreate_Button")
-        sizePolicy13.setHeightForWidth(self.DatabaseCreate_Button.sizePolicy().hasHeightForWidth())
-        self.DatabaseCreate_Button.setSizePolicy(sizePolicy13)
-        icon11 = QIcon()
-        icon11.addFile(u":/file_open/icons/icons8-add-database-100.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.DatabaseCreate_Button.setIcon(icon11)
+        sizePolicy11.setHeightForWidth(self.DatabaseCreate_Button.sizePolicy().hasHeightForWidth())
+        self.DatabaseCreate_Button.setSizePolicy(sizePolicy11)
+        icon10 = QIcon()
+        icon10.addFile(u":/file_open/icons/icons8-add-database-100.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.DatabaseCreate_Button.setIcon(icon10)
 
         self.horizontalLayout_9.addWidget(self.DatabaseCreate_Button)
 
 
         self.verticalLayout_10.addWidget(self.databaseBrowse_Frame_2)
 
-        self.tableBrowse_Frame_2 = QFrame(self.databaseConnect_Frame_2)
-        self.tableBrowse_Frame_2.setObjectName(u"tableBrowse_Frame_2")
-        sizePolicy5.setHeightForWidth(self.tableBrowse_Frame_2.sizePolicy().hasHeightForWidth())
-        self.tableBrowse_Frame_2.setSizePolicy(sizePolicy5)
-        self.tableBrowse_Frame_2.setFrameShape(QFrame.StyledPanel)
-        self.tableBrowse_Frame_2.setFrameShadow(QFrame.Raised)
-        self.horizontalLayout_10 = QHBoxLayout(self.tableBrowse_Frame_2)
-        self.horizontalLayout_10.setObjectName(u"horizontalLayout_10")
-        self.TableChoice_ComboBox_2 = QComboBox(self.tableBrowse_Frame_2)
-        self.TableChoice_ComboBox_2.setObjectName(u"TableChoice_ComboBox_2")
-        sizePolicy15.setHeightForWidth(self.TableChoice_ComboBox_2.sizePolicy().hasHeightForWidth())
-        self.TableChoice_ComboBox_2.setSizePolicy(sizePolicy15)
-        self.TableChoice_ComboBox_2.setEditable(True)
-
-        self.horizontalLayout_10.addWidget(self.TableChoice_ComboBox_2)
-
-        self.DatabaseConnectionSave_Button_2 = QPushButton(self.tableBrowse_Frame_2)
-        self.DatabaseConnectionSave_Button_2.setObjectName(u"DatabaseConnectionSave_Button_2")
-        sizePolicy13.setHeightForWidth(self.DatabaseConnectionSave_Button_2.sizePolicy().hasHeightForWidth())
-        self.DatabaseConnectionSave_Button_2.setSizePolicy(sizePolicy13)
-        self.DatabaseConnectionSave_Button_2.setIcon(icon9)
-
-        self.horizontalLayout_10.addWidget(self.DatabaseConnectionSave_Button_2)
-
-        self.tableCreate_Button = QPushButton(self.tableBrowse_Frame_2)
-        self.tableCreate_Button.setObjectName(u"tableCreate_Button")
-        sizePolicy13.setHeightForWidth(self.tableCreate_Button.sizePolicy().hasHeightForWidth())
-        self.tableCreate_Button.setSizePolicy(sizePolicy13)
-        icon12 = QIcon()
-        icon12.addFile(u":/file_open/icons/icons8-insert-table-100.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.tableCreate_Button.setIcon(icon12)
-
-        self.horizontalLayout_10.addWidget(self.tableCreate_Button)
-
-
-        self.verticalLayout_10.addWidget(self.tableBrowse_Frame_2)
-
 
         self.verticalLayout_11.addWidget(self.databaseConnect_Frame_2)
 
         self.scrollArea = QScrollArea(self.databaseEdit_Page)
         self.scrollArea.setObjectName(u"scrollArea")
-        sizePolicy16 = QSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Expanding)
-        sizePolicy16.setHorizontalStretch(0)
-        sizePolicy16.setVerticalStretch(8)
-        sizePolicy16.setHeightForWidth(self.scrollArea.sizePolicy().hasHeightForWidth())
-        self.scrollArea.setSizePolicy(sizePolicy16)
+        sizePolicy15 = QSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Expanding)
+        sizePolicy15.setHorizontalStretch(0)
+        sizePolicy15.setVerticalStretch(9)
+        sizePolicy15.setHeightForWidth(self.scrollArea.sizePolicy().hasHeightForWidth())
+        self.scrollArea.setSizePolicy(sizePolicy15)
         self.scrollArea.setContextMenuPolicy(Qt.DefaultContextMenu)
         self.scrollArea.setStyleSheet(u"QScrollArea {\n"
 "    border: 2px solid #5a90d8; /* Border color */\n"
@@ -865,7 +817,7 @@ class Ui_Parser_UI(object):
         self.scrollArea.setAlignment(Qt.AlignHCenter|Qt.AlignTop)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 642, 318))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 96, 26))
         self.verticalLayout_22 = QVBoxLayout(self.scrollAreaWidgetContents)
         self.verticalLayout_22.setObjectName(u"verticalLayout_22")
         self.databaseRecords_layout = QVBoxLayout()
@@ -879,15 +831,22 @@ class Ui_Parser_UI(object):
 
         self.databaseReOrder_Button = QPushButton(self.databaseEdit_Page)
         self.databaseReOrder_Button.setObjectName(u"databaseReOrder_Button")
-        icon13 = QIcon()
-        icon13.addFile(u":/file_open/icons/icons8-sort-96.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.databaseReOrder_Button.setIcon(icon13)
+        sizePolicy16 = QSizePolicy(QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Fixed)
+        sizePolicy16.setHorizontalStretch(0)
+        sizePolicy16.setVerticalStretch(1)
+        sizePolicy16.setHeightForWidth(self.databaseReOrder_Button.sizePolicy().hasHeightForWidth())
+        self.databaseReOrder_Button.setSizePolicy(sizePolicy16)
+        icon11 = QIcon()
+        icon11.addFile(u":/file_open/icons/icons8-sort-96.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.databaseReOrder_Button.setIcon(icon11)
 
         self.verticalLayout_11.addWidget(self.databaseReOrder_Button)
 
         self.databaseRegenID_Button = QPushButton(self.databaseEdit_Page)
         self.databaseRegenID_Button.setObjectName(u"databaseRegenID_Button")
-        self.databaseRegenID_Button.setIcon(icon13)
+        sizePolicy16.setHeightForWidth(self.databaseRegenID_Button.sizePolicy().hasHeightForWidth())
+        self.databaseRegenID_Button.setSizePolicy(sizePolicy16)
+        self.databaseRegenID_Button.setIcon(icon11)
 
         self.verticalLayout_11.addWidget(self.databaseRegenID_Button)
 
@@ -964,9 +923,9 @@ class Ui_Parser_UI(object):
 "    border-radius: 12px;\n"
 "    padding: 5px 10px;\n"
 "}")
-        icon14 = QIcon()
-        icon14.addFile(u":/file_open/icons/icons8-microsoft-word-100.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.templateWordImport_LabelButton.setIcon(icon14)
+        icon12 = QIcon()
+        icon12.addFile(u":/file_open/icons/icons8-microsoft-word-100.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.templateWordImport_LabelButton.setIcon(icon12)
 
         self.verticalLayout_13.addWidget(self.templateWordImport_LabelButton)
 
@@ -1096,9 +1055,9 @@ class Ui_Parser_UI(object):
 "QPushButton:pressed {\n"
 "    background-color: #122031; /* Darker shade when pressed */\n"
 "}")
-        icon15 = QIcon()
-        icon15.addFile(u":/file_open/icons/icons8-move-through-64.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.parseWordFileExport_ParseButton.setIcon(icon15)
+        icon13 = QIcon()
+        icon13.addFile(u":/file_open/icons/icons8-move-through-64.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.parseWordFileExport_ParseButton.setIcon(icon13)
         self.parseWordFileExport_ParseButton.setIconSize(QSize(32, 32))
 
         self.verticalLayout_7.addWidget(self.parseWordFileExport_ParseButton)
@@ -1191,17 +1150,17 @@ class Ui_Parser_UI(object):
 "    border-radius: 12px;\n"
 "    padding: 5px 10px;\n"
 "}")
-        icon16 = QIcon()
-        icon16.addFile(u":/file_open/icons/icons8-sql-90.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.defaultDatabaseTypeName_label.setIcon(icon16)
+        icon14 = QIcon()
+        icon14.addFile(u":/file_open/icons/icons8-sql-90.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.defaultDatabaseTypeName_label.setIcon(icon14)
 
         self.verticalLayout_14.addWidget(self.defaultDatabaseTypeName_label)
 
         self.defaultDatabaseTypeConfig_ComboBox = QComboBox(self.frame_2)
         self.defaultDatabaseTypeConfig_ComboBox.addItem("")
         self.defaultDatabaseTypeConfig_ComboBox.setObjectName(u"defaultDatabaseTypeConfig_ComboBox")
-        sizePolicy15.setHeightForWidth(self.defaultDatabaseTypeConfig_ComboBox.sizePolicy().hasHeightForWidth())
-        self.defaultDatabaseTypeConfig_ComboBox.setSizePolicy(sizePolicy15)
+        sizePolicy14.setHeightForWidth(self.defaultDatabaseTypeConfig_ComboBox.sizePolicy().hasHeightForWidth())
+        self.defaultDatabaseTypeConfig_ComboBox.setSizePolicy(sizePolicy14)
         self.defaultDatabaseTypeConfig_ComboBox.setEditable(False)
 
         self.verticalLayout_14.addWidget(self.defaultDatabaseTypeConfig_ComboBox)
@@ -1247,8 +1206,8 @@ class Ui_Parser_UI(object):
         self.horizontalLayout_14.setObjectName(u"horizontalLayout_14")
         self.defaultDatabaseConfig_ComboBox = QComboBox(self.defaultDatabaseChoice_frame)
         self.defaultDatabaseConfig_ComboBox.setObjectName(u"defaultDatabaseConfig_ComboBox")
-        sizePolicy15.setHeightForWidth(self.defaultDatabaseConfig_ComboBox.sizePolicy().hasHeightForWidth())
-        self.defaultDatabaseConfig_ComboBox.setSizePolicy(sizePolicy15)
+        sizePolicy14.setHeightForWidth(self.defaultDatabaseConfig_ComboBox.sizePolicy().hasHeightForWidth())
+        self.defaultDatabaseConfig_ComboBox.setSizePolicy(sizePolicy14)
         self.defaultDatabaseConfig_ComboBox.setEditable(True)
 
         self.horizontalLayout_14.addWidget(self.defaultDatabaseConfig_ComboBox)
@@ -1257,7 +1216,7 @@ class Ui_Parser_UI(object):
         self.defaultDatabaseCreate_Button.setObjectName(u"defaultDatabaseCreate_Button")
         sizePolicy7.setHeightForWidth(self.defaultDatabaseCreate_Button.sizePolicy().hasHeightForWidth())
         self.defaultDatabaseCreate_Button.setSizePolicy(sizePolicy7)
-        self.defaultDatabaseCreate_Button.setIcon(icon11)
+        self.defaultDatabaseCreate_Button.setIcon(icon10)
 
         self.horizontalLayout_14.addWidget(self.defaultDatabaseCreate_Button)
 
@@ -1293,9 +1252,9 @@ class Ui_Parser_UI(object):
 "    border-radius: 12px;\n"
 "    padding: 5px 10px;\n"
 "}")
-        icon17 = QIcon()
-        icon17.addFile(u":/file_open/icons/icons8-connection-100.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.defaultDatabaseConString_label_2.setIcon(icon17)
+        icon15 = QIcon()
+        icon15.addFile(u":/file_open/icons/icons8-connection-100.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.defaultDatabaseConString_label_2.setIcon(icon15)
 
         self.verticalLayout_17.addWidget(self.defaultDatabaseConString_label_2)
 
@@ -1303,9 +1262,9 @@ class Ui_Parser_UI(object):
         self.defaultDatabaseConStringGen_Button.setObjectName(u"defaultDatabaseConStringGen_Button")
         sizePolicy7.setHeightForWidth(self.defaultDatabaseConStringGen_Button.sizePolicy().hasHeightForWidth())
         self.defaultDatabaseConStringGen_Button.setSizePolicy(sizePolicy7)
-        icon18 = QIcon()
-        icon18.addFile(u":/file_open/icons/icons8-mechanistic-analysis-100.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.defaultDatabaseConStringGen_Button.setIcon(icon18)
+        icon16 = QIcon()
+        icon16.addFile(u":/file_open/icons/icons8-mechanistic-analysis-100.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.defaultDatabaseConStringGen_Button.setIcon(icon16)
 
         self.verticalLayout_17.addWidget(self.defaultDatabaseConStringGen_Button)
 
@@ -1329,9 +1288,9 @@ class Ui_Parser_UI(object):
         self.defaultDatabaseConTest_Button_2.setObjectName(u"defaultDatabaseConTest_Button_2")
         sizePolicy7.setHeightForWidth(self.defaultDatabaseConTest_Button_2.sizePolicy().hasHeightForWidth())
         self.defaultDatabaseConTest_Button_2.setSizePolicy(sizePolicy7)
-        icon19 = QIcon()
-        icon19.addFile(u":/file_open/icons/icons8-wrench-100.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.defaultDatabaseConTest_Button_2.setIcon(icon19)
+        icon17 = QIcon()
+        icon17.addFile(u":/file_open/icons/icons8-wrench-100.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.defaultDatabaseConTest_Button_2.setIcon(icon17)
 
         self.horizontalLayout_15.addWidget(self.defaultDatabaseConTest_Button_2)
 
@@ -1360,7 +1319,9 @@ class Ui_Parser_UI(object):
 "QPushButton:pressed {\n"
 "    background-color: #216407; /* Darker shade when pressed */\n"
 "}")
-        self.defaultDatabaseConSave_Button.setIcon(icon9)
+        icon18 = QIcon()
+        icon18.addFile(u":/file_open/icons/icons8-save-100.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.defaultDatabaseConSave_Button.setIcon(icon18)
 
         self.verticalLayout_15.addWidget(self.defaultDatabaseConSave_Button)
 
@@ -1368,9 +1329,9 @@ class Ui_Parser_UI(object):
         self.DatabaseEditRestoreDefault_Button.setObjectName(u"DatabaseEditRestoreDefault_Button")
         sizePolicy7.setHeightForWidth(self.DatabaseEditRestoreDefault_Button.sizePolicy().hasHeightForWidth())
         self.DatabaseEditRestoreDefault_Button.setSizePolicy(sizePolicy7)
-        icon20 = QIcon()
-        icon20.addFile(u":/file_open/icons/icons8-reload-100.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.DatabaseEditRestoreDefault_Button.setIcon(icon20)
+        icon19 = QIcon()
+        icon19.addFile(u":/file_open/icons/icons8-reload-100.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.DatabaseEditRestoreDefault_Button.setIcon(icon19)
 
         self.verticalLayout_15.addWidget(self.DatabaseEditRestoreDefault_Button)
 
@@ -1396,7 +1357,7 @@ class Ui_Parser_UI(object):
 
         self.retranslateUi(Parser_UI)
 
-        self.stackedWidget.setCurrentIndex(3)
+        self.stackedWidget.setCurrentIndex(0)
         self.defaultDatabaseTypeConfig_ComboBox.setCurrentIndex(0)
 
 
@@ -1446,8 +1407,6 @@ class Ui_Parser_UI(object):
         self.databaseBrowse_LabelButton.setText(QCoreApplication.translate("Parser_UI", u"Database Dictionary Load", None))
         self.DatabaseChoice_ComboBox.setPlaceholderText(QCoreApplication.translate("Parser_UI", u"Choose a DataBase, then click connect", None))
         self.DatabaseConnect_Button.setText(QCoreApplication.translate("Parser_UI", u"Connect", None))
-        self.TableChoice_ComboBox.setPlaceholderText(QCoreApplication.translate("Parser_UI", u"Choose a Table", None))
-        self.DatabaseConnectionSave_Button.setText(QCoreApplication.translate("Parser_UI", u"Save", None))
         self.databaseEdit_Button.setText(QCoreApplication.translate("Parser_UI", u"Edit DataBase", None))
         self.xlsParsedFilePath_Line.setText("")
         self.xlsParsedFilePath_Line.setPlaceholderText(QCoreApplication.translate("Parser_UI", u"Where to save Excel File", None))
@@ -1457,9 +1416,6 @@ class Ui_Parser_UI(object):
         self.DatabaseChoice_ComboBox_2.setPlaceholderText(QCoreApplication.translate("Parser_UI", u"Choose a DataBase, then click connect", None))
         self.DatabaseConnect_Button_2.setText(QCoreApplication.translate("Parser_UI", u"Connect", None))
         self.DatabaseCreate_Button.setText(QCoreApplication.translate("Parser_UI", u"Create", None))
-        self.TableChoice_ComboBox_2.setPlaceholderText(QCoreApplication.translate("Parser_UI", u"Choose a Table", None))
-        self.DatabaseConnectionSave_Button_2.setText(QCoreApplication.translate("Parser_UI", u"Save", None))
-        self.tableCreate_Button.setText(QCoreApplication.translate("Parser_UI", u"Create", None))
         self.databaseReOrder_Button.setText(QCoreApplication.translate("Parser_UI", u"Re-order Records", None))
         self.databaseRegenID_Button.setText(QCoreApplication.translate("Parser_UI", u"Regenerate ID", None))
         self.xlsParsedFileImport_LabelButton.setText(QCoreApplication.translate("Parser_UI", u"Excel File Import", None))

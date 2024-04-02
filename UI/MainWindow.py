@@ -118,18 +118,22 @@ class MainWindow(QMainWindow):
 
         self.ui.DatabaseEditRestoreDefault_Button.clicked.connect(self.restore_default_config)
 
+    def __check_databases_ui(self):
+        databases, error = db_controller.get_sqlite_databases(config.get('db_dir'))
+        if databases is None:
+            self.ErrorMessage_Signal.emit(error)
+        elif len(databases) == 0:
+            self.create_First_db()
+        elif len(databases) > 0:
+            self.fill_list_combobox(self.ui.DatabaseChoice_ComboBox, databases)
+
     @Slot()
     def refresh_page_data(self):
         global config
+
         # xlsRawImport_Page
         if self.ui.stackedWidget.currentWidget() == self.ui.xlsRawImport_Page:
-            databases, error = db_controller.get_sqlite_databases(config.get('db_dir'))
-            if databases is None:
-                self.ErrorMessage_Signal.emit(error)
-            elif len(databases) == 0:
-                self.create_First_db()
-            elif len(databases) > 0:
-                self.fill_list_combobox(self.ui.DatabaseChoice_ComboBox, databases)
+            self.__check_databases_ui()
 
         # databaseEdit_Page
         elif self.ui.stackedWidget.currentWidget() == self.ui.databaseEdit_Page:

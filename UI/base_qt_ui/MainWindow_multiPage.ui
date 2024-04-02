@@ -221,6 +221,12 @@ QToolTip {
            <verstretch>1</verstretch>
           </sizepolicy>
          </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>45</height>
+          </size>
+         </property>
          <property name="styleSheet">
           <string notr="true">QPushButton {
 	border:none;
@@ -319,7 +325,7 @@ QLabel {
          <property name="sizePolicy">
           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
            <horstretch>0</horstretch>
-           <verstretch>9</verstretch>
+           <verstretch>10</verstretch>
           </sizepolicy>
          </property>
          <property name="styleSheet">
@@ -507,7 +513,7 @@ QLabel {
              <enum>Qt::NoContextMenu</enum>
             </property>
             <property name="currentIndex">
-             <number>3</number>
+             <number>0</number>
             </property>
             <widget class="QWidget" name="xlsRawImport_Page">
              <layout class="QHBoxLayout" name="horizontalLayout_3">
@@ -678,7 +684,7 @@ QLabel {
                    <property name="sizePolicy">
                     <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                      <horstretch>0</horstretch>
-                     <verstretch>3</verstretch>
+                     <verstretch>1</verstretch>
                     </sizepolicy>
                    </property>
                    <property name="frameShape">
@@ -698,6 +704,12 @@ QLabel {
                         <horstretch>0</horstretch>
                         <verstretch>1</verstretch>
                        </sizepolicy>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>16777215</width>
+                        <height>30</height>
+                       </size>
                       </property>
                       <property name="styleSheet">
                        <string notr="true">QPushButton {
@@ -728,8 +740,14 @@ QLabel {
                       <property name="sizePolicy">
                        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                         <horstretch>0</horstretch>
-                        <verstretch>5</verstretch>
+                        <verstretch>3</verstretch>
                        </sizepolicy>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>16777215</width>
+                        <height>80</height>
+                       </size>
                       </property>
                       <property name="frameShape">
                        <enum>QFrame::StyledPanel</enum>
@@ -743,7 +761,7 @@ QLabel {
                          <property name="sizePolicy">
                           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                            <horstretch>0</horstretch>
-                           <verstretch>4</verstretch>
+                           <verstretch>3</verstretch>
                           </sizepolicy>
                          </property>
                          <property name="minimumSize">
@@ -770,6 +788,12 @@ QLabel {
                               <verstretch>2</verstretch>
                              </sizepolicy>
                             </property>
+                            <property name="styleSheet">
+                             <string notr="true"/>
+                            </property>
+                            <property name="inputMethodHints">
+                             <set>Qt::ImhNone</set>
+                            </property>
                             <property name="placeholderText">
                              <string>Choose a DataBase, then click connect</string>
                             </property>
@@ -795,84 +819,60 @@ QLabel {
                          </layout>
                         </widget>
                        </item>
-                       <item>
-                        <widget class="QFrame" name="tableBrowse_Frame">
-                         <property name="sizePolicy">
-                          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                           <horstretch>0</horstretch>
-                           <verstretch>4</verstretch>
-                          </sizepolicy>
-                         </property>
-                         <property name="minimumSize">
-                          <size>
-                           <width>0</width>
-                           <height>49</height>
-                          </size>
-                         </property>
-                         <property name="frameShape">
-                          <enum>QFrame::StyledPanel</enum>
-                         </property>
-                         <property name="frameShadow">
-                          <enum>QFrame::Raised</enum>
-                         </property>
-                         <layout class="QHBoxLayout" name="horizontalLayout_6">
-                          <item>
-                           <widget class="QComboBox" name="TableChoice_ComboBox">
-                            <property name="sizePolicy">
-                             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                              <horstretch>6</horstretch>
-                              <verstretch>2</verstretch>
-                             </sizepolicy>
-                            </property>
-                            <property name="placeholderText">
-                             <string>Choose a Table</string>
-                            </property>
-                           </widget>
-                          </item>
-                          <item>
-                           <widget class="QPushButton" name="DatabaseConnectionSave_Button">
-                            <property name="sizePolicy">
-                             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-                              <horstretch>1</horstretch>
-                              <verstretch>0</verstretch>
-                             </sizepolicy>
-                            </property>
-                            <property name="text">
-                             <string>Save</string>
-                            </property>
-                            <property name="icon">
-                             <iconset resource="icons.qrc">
-                              <normaloff>:/file_open/icons/icons8-save-100.png</normaloff>:/file_open/icons/icons8-save-100.png</iconset>
-                            </property>
-                           </widget>
-                          </item>
-                         </layout>
-                        </widget>
-                       </item>
                       </layout>
                      </widget>
                     </item>
                     <item>
-                     <widget class="QPushButton" name="databaseEdit_Button">
+                     <widget class="QFrame" name="frame_4">
                       <property name="sizePolicy">
-                       <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                         <horstretch>0</horstretch>
-                        <verstretch>1</verstretch>
+                        <verstretch>0</verstretch>
                        </sizepolicy>
                       </property>
-                      <property name="text">
-                       <string>Edit DataBase</string>
+                      <property name="styleSheet">
+                       <string notr="true"/>
                       </property>
-                      <property name="icon">
-                       <iconset resource="icons.qrc">
-                        <normaloff>:/file_open/icons/icons8-database-100.png</normaloff>:/file_open/icons/icons8-database-100.png</iconset>
+                      <property name="frameShape">
+                       <enum>QFrame::StyledPanel</enum>
                       </property>
-                      <property name="iconSize">
-                       <size>
-                        <width>30</width>
-                        <height>30</height>
-                       </size>
+                      <property name="frameShadow">
+                       <enum>QFrame::Raised</enum>
                       </property>
+                      <layout class="QVBoxLayout" name="verticalLayout_18">
+                       <item>
+                        <widget class="QPushButton" name="databaseEdit_Button">
+                         <property name="sizePolicy">
+                          <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                           <horstretch>1</horstretch>
+                           <verstretch>1</verstretch>
+                          </sizepolicy>
+                         </property>
+                         <property name="maximumSize">
+                          <size>
+                           <width>16777215</width>
+                           <height>16777215</height>
+                          </size>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true"/>
+                         </property>
+                         <property name="text">
+                          <string>Edit DataBase</string>
+                         </property>
+                         <property name="icon">
+                          <iconset resource="icons.qrc">
+                           <normaloff>:/file_open/icons/icons8-database-100.png</normaloff>:/file_open/icons/icons8-database-100.png</iconset>
+                         </property>
+                         <property name="iconSize">
+                          <size>
+                           <width>30</width>
+                           <height>30</height>
+                          </size>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
                      </widget>
                     </item>
                    </layout>
@@ -934,6 +934,9 @@ QLabel {
                            <horstretch>6</horstretch>
                            <verstretch>0</verstretch>
                           </sizepolicy>
+                         </property>
+                         <property name="inputMethodHints">
+                          <set>Qt::ImhNoEditMenu</set>
                          </property>
                          <property name="text">
                           <string/>
@@ -1018,8 +1021,14 @@ QPushButton:pressed {
                 <property name="sizePolicy">
                  <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                   <horstretch>0</horstretch>
-                  <verstretch>2</verstretch>
+                  <verstretch>1</verstretch>
                  </sizepolicy>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>130</height>
+                 </size>
                 </property>
                 <property name="frameShape">
                  <enum>QFrame::StyledPanel</enum>
@@ -1119,74 +1128,6 @@ QPushButton:pressed {
                    </layout>
                   </widget>
                  </item>
-                 <item>
-                  <widget class="QFrame" name="tableBrowse_Frame_2">
-                   <property name="sizePolicy">
-                    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                     <horstretch>0</horstretch>
-                     <verstretch>2</verstretch>
-                    </sizepolicy>
-                   </property>
-                   <property name="frameShape">
-                    <enum>QFrame::StyledPanel</enum>
-                   </property>
-                   <property name="frameShadow">
-                    <enum>QFrame::Raised</enum>
-                   </property>
-                   <layout class="QHBoxLayout" name="horizontalLayout_10">
-                    <item>
-                     <widget class="QComboBox" name="TableChoice_ComboBox_2">
-                      <property name="sizePolicy">
-                       <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-                        <horstretch>8</horstretch>
-                        <verstretch>0</verstretch>
-                       </sizepolicy>
-                      </property>
-                      <property name="editable">
-                       <bool>true</bool>
-                      </property>
-                      <property name="placeholderText">
-                       <string>Choose a Table</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QPushButton" name="DatabaseConnectionSave_Button_2">
-                      <property name="sizePolicy">
-                       <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-                        <horstretch>1</horstretch>
-                        <verstretch>0</verstretch>
-                       </sizepolicy>
-                      </property>
-                      <property name="text">
-                       <string>Save</string>
-                      </property>
-                      <property name="icon">
-                       <iconset resource="icons.qrc">
-                        <normaloff>:/file_open/icons/icons8-save-100.png</normaloff>:/file_open/icons/icons8-save-100.png</iconset>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QPushButton" name="tableCreate_Button">
-                      <property name="sizePolicy">
-                       <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-                        <horstretch>1</horstretch>
-                        <verstretch>0</verstretch>
-                       </sizepolicy>
-                      </property>
-                      <property name="text">
-                       <string>Create</string>
-                      </property>
-                      <property name="icon">
-                       <iconset resource="icons.qrc">
-                        <normaloff>:/file_open/icons/icons8-insert-table-100.png</normaloff>:/file_open/icons/icons8-insert-table-100.png</iconset>
-                      </property>
-                     </widget>
-                    </item>
-                   </layout>
-                  </widget>
-                 </item>
                 </layout>
                </widget>
               </item>
@@ -1195,7 +1136,7 @@ QPushButton:pressed {
                 <property name="sizePolicy">
                  <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                   <horstretch>0</horstretch>
-                  <verstretch>8</verstretch>
+                  <verstretch>9</verstretch>
                  </sizepolicy>
                 </property>
                 <property name="contextMenuPolicy">
@@ -1260,8 +1201,8 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>642</width>
-                   <height>318</height>
+                   <width>96</width>
+                   <height>26</height>
                   </rect>
                  </property>
                  <layout class="QVBoxLayout" name="verticalLayout_22">
@@ -1274,6 +1215,12 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
               </item>
               <item>
                <widget class="QPushButton" name="databaseReOrder_Button">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>1</verstretch>
+                 </sizepolicy>
+                </property>
                 <property name="text">
                  <string>Re-order Records</string>
                 </property>
@@ -1285,6 +1232,12 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
               </item>
               <item>
                <widget class="QPushButton" name="databaseRegenID_Button">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>1</verstretch>
+                 </sizepolicy>
+                </property>
                 <property name="text">
                  <string>Regenerate ID</string>
                 </property>
