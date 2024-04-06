@@ -1,13 +1,13 @@
 import logging
 import logging.handlers
 from pathlib import Path
+from controllers.main_init_controller import init_check
 
+init_check()
+from controllers import config_controller, db_controller
 from PySide6.QtWidgets import QApplication
 import sys
-
 from UI.MainWindow import MainWindow
-
-from controllers import config_controller, db_controller
 
 
 def logger_filter():

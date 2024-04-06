@@ -2,13 +2,13 @@ import logging
 import sys
 from pathlib import Path
 
-from PySide6.QtGui import QIcon
-from PySide6.QtWidgets import QMainWindow, QVBoxLayout, QWidget, QSizePolicy, QComboBox
+from PySide6.QtGui import QIcon, QMouseEvent
+from PySide6.QtWidgets import QMainWindow, QVBoxLayout, QWidget, QSizePolicy, QComboBox, QSizeGrip
 from PySide6.QtCore import Signal, Slot, QSize, Qt
 from UI.base_qt_ui.MainWindow_multiPage import Ui_Parser_UI
 from controllers import file_controler, msgbox_controller, xls_controller, db_controller, config_controller
 from controllers.FunctionWrapper import FunctionWrapper
-from .title_bar import TitleBar
+from .base_qt_ui.title_bar import Ui_TitleBar
 
 logger = logging.getLogger('app.MainWindowGUI')
 
@@ -22,11 +22,25 @@ class MainWindow(QMainWindow):
 
     def __init__(self):
         super(MainWindow, self).__init__()
+
         self.raw_excel_df = None
         self.raw_xls_chosenColumn = ""
         self.raw_xls_filepath = ""
         self.ui = Ui_Parser_UI()
         self.ui.setupUi(self)
+
+        # Access the titlebar_frame as a QWidget
+        # self.custom_titlebar = self.ui.titlebar_widget
+
+        # Add custom methods or connect signals for the custom title bar
+        # self.custom_titlebar.mousePressEvent = self.titlebar_mousePressEvent
+        # self.custom_titlebar.mouseMoveEvent = self.move_window
+        # self.custom_titlebar.mouseDoubleClickEvent = self.doubleClickTitle
+        # self.custom_titlebar.mouseReleaseEvent = self.release_window
+        # self.custom_titlebar.setMouseTracking(True)
+        # self.maximize_threshold = 10  # Adjust as needed
+        # self.click_position = None
+        # self.should_maximize = False
         # self.setWindowFlags(Qt.FramelessWindowHint)
         # self.setAttribute(Qt.WA_TranslucentBackground)
 
@@ -37,6 +51,74 @@ class MainWindow(QMainWindow):
         self.initialize_connections()
         self.ui.stackedWidget.setCurrentWidget(self.ui.xlsRawImport_Page)
         self.refresh_page_data()
+        self.closeEvent = self.close_MainWindow
+
+        # self.setWindowFlags(self.windowFlags() | Qt.WindowMinimizeButtonHint)
+        # self.size_grips = [
+        #     QSizeGrip(self),
+        #     QSizeGrip(self),
+        #     QSizeGrip(self),
+        #     QSizeGrip(self)
+        # ]
+        #
+        # self.size_grips[0].setStyleSheet("background-color: rgb(255, 0, 0)")
+        # self.size_grips[1].setStyleSheet("background-color: rgb(255, 0, 0)")
+        # self.size_grips[2].setStyleSheet("background-color: rgb(255, 0, 0)")
+        # self.size_grips[3].setStyleSheet("background-color: rgb(255, 0, 0)")
+        #
+        # # Add size grip to bottom-left corner
+        # self.size_grips[0].setCursor(Qt.SizeBDiagCursor)
+        # self.size_grips[0].resize(20, 20)
+        # self.size_grips[0].move(0, self.height() - 20)
+        #
+        # # Add size grip to top-left corner
+        # self.size_grips[1].setCursor(Qt.SizeFDiagCursor)
+        # self.size_grips[1].resize(20, 20)
+        # self.size_grips[1].move(0, 0)
+        #
+        # # Add size grip to bottom-right corner
+        # self.size_grips[2].setCursor(Qt.SizeFDiagCursor)
+        # self.size_grips[2].resize(20, 20)
+        # self.size_grips[2].move(self.width() - 20, self.height() - 20)
+        #
+        # # Add size grip to top-right corner
+        # self.size_grips[3].setCursor(Qt.SizeBDiagCursor)
+        # self.size_grips[3].resize(20, 20)
+        # self.size_grips[3].move(self.width() - 20, 0)
+
+    # def resizeEvent(self, event):
+    #     for grip in self.size_grips:
+    #         grip.move(self.width() - 20, self.height() - 20)
+
+    # def doubleClickTitle(self, *args):
+    #     self.maximize_or_normal()
+    #
+    # def titlebar_mousePressEvent(self, event: QMouseEvent):
+    #     if event.button() == Qt.MouseButton.LeftButton:
+    #         self.click_position = event.globalPos()
+    #
+    # def move_window(self, event: QMouseEvent):
+    #     if not self.isMaximized() and event.buttons() == Qt.MouseButton.LeftButton:
+    #         self.move(self.pos() + event.globalPos() - self.click_position)
+    #         self.click_position = event.globalPos()
+    #         current_pos = self.mapToGlobal(event.pos())
+    #         if current_pos.y() < 0 < current_pos.x():
+    #             self.should_maximize = True
+    #         else:
+    #             self.should_maximize = False
+    #         event.accept()
+    #     elif self.isMaximized() and event.buttons() == Qt.MouseButton.LeftButton:
+    #         diff = event.globalPos() - self.click_position
+    #         if diff.manhattanLength() > self.maximize_threshold:
+    #             self.showNormal()
+    #             self.move(self.pos() + diff)
+    #             self.click_position = event.globalPos()
+    #             event.accept()
+    #
+    # def release_window(self, event: QMouseEvent):
+    #     if self.should_maximize:
+    #         self.showMaximized()
+    #     event.accept()
 
     def set_window_title_icon(self):
         title_icon = QIcon()
@@ -53,8 +135,11 @@ class MainWindow(QMainWindow):
         self.ui.xlsRawFilePath_Line.setText(str(self.raw_xls_filepath))
 
     @Slot()
-    def close_MainWindow(self):
-        msgbox_controller.show_exit_dialog()
+    def close_MainWindow(self, event=None):
+        msgbox_controller.show_exit_dialog(event)
+
+    def closeEvent(self, event) -> None:
+        self.close_MainWindow(event)
 
     @Slot()
     def load_raw_excel(self):
@@ -112,11 +197,22 @@ class MainWindow(QMainWindow):
         self.ErrorMessage_Signal.connect(msgbox_controller.show_error_message)
         self.ActionMessage2_Signal.connect(msgbox_controller.show_2action_message)
         self.InfoMessage_Signal.connect(msgbox_controller.show_info_message)
-        # self.ui.btn_close.clicked.connect(self.close_MainWindow)
 
         self.ui.stackedWidget.currentChanged.connect(self.refresh_page_data)
 
+        # self.ui.btn_close.clicked.connect(self.close_MainWindow)
+        # self.ui.btn_maximize_restore.clicked.connect(self.maximize_or_normal)
+        # self.ui.btn_minimize.clicked.connect(lambda: self.showMinimized())
+
         self.ui.DatabaseEditRestoreDefault_Button.clicked.connect(self.restore_default_config)
+
+
+
+    def maximize_or_normal(self):
+        if self.isMaximized():
+            self.showNormal()
+        else:
+            self.showMaximized()
 
     def __check_databases_ui(self):
         databases, error = db_controller.get_sqlite_databases(config.get('db_dir'))
@@ -199,4 +295,3 @@ class MainWindow(QMainWindow):
                 i = i.stem
             combobox.addItem(i)
             combobox.setCurrentIndex(0)
-

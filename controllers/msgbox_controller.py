@@ -1,7 +1,7 @@
 import sys
 from pathlib import Path
 
-from PySide6.QtCore import QSize
+from PySide6.QtCore import QSize, QEvent
 from PySide6.QtGui import QIcon
 from PySide6.QtWidgets import QMessageBox
 
@@ -9,7 +9,7 @@ from UI.base_qt_ui import icons_rc
 from controllers.FunctionWrapper import FunctionWrapper
 
 
-def show_exit_dialog():
+def show_exit_dialog(event=None):
     msgbox = QMessageBox()
     msgbox.setWindowTitle("Exit")
     icon = msgbox.Icon.Information
@@ -27,8 +27,13 @@ def show_exit_dialog():
     reject = msgbox.addButton("No", QMessageBox.ButtonRole.RejectRole)
     msgbox.exec()
     if msgbox.clickedButton() == accept:
-        sys.exit(0)
+        if event:
+            event.accept()
+        else:
+            sys.exit(0)
     elif msgbox.clickedButton() == reject:
+        if event:
+            event.ignore()
         msgbox.close()
 
 
@@ -76,7 +81,7 @@ def show_2action_message(msg: str, msg_detailed: str, msg_ok: str, on_ok: Functi
         on_cancel()
 
 
-def show_info_message(msg: str, msg_detailed: str):
+def show_info_message(msg: str, msg_detailed: str = ""):
     msgbox = QMessageBox()
     msgbox.setWindowTitle("Action")
     icon = msgbox.Icon.Information

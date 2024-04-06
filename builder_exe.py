@@ -31,6 +31,11 @@ class Builder:
         self.__app_path.mkdir()
         for directory in self.__dirs_to_copy:
             shutil.copytree(Path().absolute().joinpath(directory), self.__app_path.joinpath(directory))
+        for file in self.__files_to_copy:
+            src = Path().absolute().joinpath(file)
+            dest = self.__app_path.joinpath(file)
+            dest.parent.mkdir(parents=True, exist_ok=True)  # Ensure parent directories exist
+            shutil.copy(src, dest)
 
     def __build(self):
         pyinstaller_versionfile.create_versionfile(
@@ -46,10 +51,10 @@ class Builder:
 
         PyInstaller.__main__.run([
             '--onefile',
-            '--add-data=C:/Users/Asus/PycharmProjects/Excell_addIn_Installer/venv/Lib/site-packages/grapheme/data/grapheme_break_property.json;/grapheme/data',
+            # '--add-data=C:/Users/Asus/PycharmProjects/Excell_addIn_Installer/venv/Lib/site-packages/grapheme/data/grapheme_break_property.json;/grapheme/data',
             '--noupx',
             '-c',
-            f'--icon={self.__icon_path.relative_to((Path().absolute()))}',
+            # f'--icon={self.__icon_path.relative_to((Path().absolute()))}',
             f'--distpath={str(self.__app_path)}',
             f'-n{self.__app_name.strip()}',
             'main.py',
@@ -70,11 +75,13 @@ def main():
     app_desc = 'xls_word_parser'
     app_icon_path = Path().absolute().joinpath('icon/file.ico')
     app_version = '0.0.1'
-    dirs_to_copy = []
+    dirs_to_copy = ['logs', 'db']
+    files_to_copy = ['config.yaml', 'UI/style_main.css']
     app_builder = Builder(
         app_path=app_path,
         app_name=app_name,
         app_desc=app_desc,
+        files_to_copy=files_to_copy,
         icon_path=app_icon_path,
         version=app_version,
         dirs_to_copy=dirs_to_copy

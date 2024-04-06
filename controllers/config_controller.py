@@ -2,6 +2,7 @@ import logging
 from pathlib import Path
 import yaml
 
+
 default_config = dict()
 
 default_config["db_dir"] = str(Path().absolute().joinpath("db"))
@@ -15,7 +16,11 @@ default_config["value_types"] = ["Number", "String"]
 logger = logging.getLogger('app.config_controller')
 
 
-def read_config(file_path):
+def read_config(file_path: str | Path):
+    if isinstance(file_path, str):
+        file_path = Path(file_path)
+    if not file_path.exists():
+        restore_default_config()
     with open(file_path, 'r') as file:
         config = yaml.safe_load(file)
     return config

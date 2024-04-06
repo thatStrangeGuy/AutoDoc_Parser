@@ -165,3 +165,9 @@ db/**
 UI/resources
 UI/base_qt_ui/icons
 .idea
+init_log.log
+logs/**
+app_EXE
+versionfile.txt
+/app_EXE/
+/db/
