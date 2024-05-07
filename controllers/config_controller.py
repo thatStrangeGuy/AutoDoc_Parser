@@ -9,7 +9,7 @@ default_config["db_dir"] = str(Path().absolute().joinpath("db"))
 default_config["db_name"] = "default"
 default_config["db_type"] = "sqlite"
 default_config["db_path"] = str(Path(default_config.get('db_dir')).joinpath(f'{default_config["db_name"]}.db'))
-default_config["conn_str"] = f'sqlite:////{default_config["db_path"]}'
+default_config["conn_str"] = f'sqlite:///{default_config["db_path"]}'
 default_config["index_types"] = ["Number", "Array"]
 default_config["value_types"] = ["Number", "String"]
 
