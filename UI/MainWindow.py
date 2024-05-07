@@ -23,6 +23,7 @@ class MainWindow(QMainWindow):
     def __init__(self):
         super(MainWindow, self).__init__()
 
+        self.saved_parsed_excel_path = None
         self.raw_excel_df = None
         self.raw_xls_chosenColumn = ""
         self.raw_xls_filepath = ""
@@ -128,10 +129,8 @@ class MainWindow(QMainWindow):
     @Slot(str)
     def open_xls_raw_file(self):
         self.ui.columnList_ComboBox.clear()
-        self.raw_xls_filepath = file_controler.browse_filepath(
-            defaultDir=str(Path().absolute().joinpath("raw_files")),
-            filter="Excel files files(*.xlsx *.xls)"
-        )
+        self.raw_xls_filepath = file_controler.browse_open_filepath(
+            defaultDir=str(Path().absolute().joinpath("raw_files")), filter="Excel files files(*.xlsx *.xls *.xlsm)")
         self.ui.xlsRawFilePath_Line.setText(str(self.raw_xls_filepath))
 
     @Slot()
@@ -193,6 +192,7 @@ class MainWindow(QMainWindow):
         )
 
         self.ui.xlsRawFilePathLoad_Button.clicked.connect(self.load_raw_excel)
+        self.ui.xlsParsedFilePathBrowse_Button.clicked.connect(self.save_excel_file)
 
         self.ErrorMessage_Signal.connect(msgbox_controller.show_error_message)
         self.ActionMessage2_Signal.connect(msgbox_controller.show_2action_message)
@@ -200,13 +200,12 @@ class MainWindow(QMainWindow):
 
         self.ui.stackedWidget.currentChanged.connect(self.refresh_page_data)
 
+
         # self.ui.btn_close.clicked.connect(self.close_MainWindow)
         # self.ui.btn_maximize_restore.clicked.connect(self.maximize_or_normal)
         # self.ui.btn_minimize.clicked.connect(lambda: self.showMinimized())
 
         self.ui.DatabaseEditRestoreDefault_Button.clicked.connect(self.restore_default_config)
-
-
 
     def maximize_or_normal(self):
         if self.isMaximized():
@@ -214,14 +213,14 @@ class MainWindow(QMainWindow):
         else:
             self.showMaximized()
 
-    def __check_databases_ui(self):
+    def __check_databases_ui(self, Combobox: QComboBox):
         databases, error = db_controller.get_sqlite_databases(config.get('db_dir'))
         if databases is None:
             self.ErrorMessage_Signal.emit(error)
         elif len(databases) == 0:
             self.create_First_db()
         elif len(databases) > 0:
-            self.fill_list_combobox(self.ui.DatabaseChoice_ComboBox, databases)
+            self.fill_list_combobox(Combobox, databases)
 
     @Slot()
     def refresh_page_data(self):
@@ -229,10 +228,11 @@ class MainWindow(QMainWindow):
 
         # xlsRawImport_Page
         if self.ui.stackedWidget.currentWidget() == self.ui.xlsRawImport_Page:
-            self.__check_databases_ui()
+            self.__check_databases_ui(self.ui.DatabaseChoice_ComboBox)
 
         # databaseEdit_Page
         elif self.ui.stackedWidget.currentWidget() == self.ui.databaseEdit_Page:
+            self.__check_databases_ui(self.ui.DatabaseChoice_ComboBox_2)
             print("Current page is editing database")  # TODO: Refreshing page if current page is editing database
 
         # wordParseXls_page
@@ -294,4 +294,11 @@ class MainWindow(QMainWindow):
             if isinstance(i, Path):
                 i = i.stem
             combobox.addItem(i)
-            combobox.setCurrentIndex(0)
+        combobox.setCurrentIndex(0)
+
+    def save_file(self):
+        pass
+
+    def save_excel_file(self):
+        self.saved_parsed_excel_path = file_controler.browse_save_file(filter="Excel files (*.xlsx *.xls)")
+        self.ui.xlsParsedFilePath_Line.setText(str(self.saved_parsed_excel_path))

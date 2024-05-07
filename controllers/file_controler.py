@@ -9,11 +9,18 @@ from PySide6.QtWidgets import QDialog
 logger = logging.getLogger("app.file_controller")
 
 
-def browse_filepath(defaultDir=QDir.currentPath(), filter='All Files (*)', title="Browse",
-                    setmode=QFileDialog.FileMode.AnyFile):
+def browse_open_filepath(defaultDir=QDir.currentPath(), filter='All Files (*)', title="Browse",
+                         setmode=QFileDialog.FileMode.ExistingFiles):
     FileDialog = QFileDialog()
     FileDialog.setFileMode(setmode)
     file, _ = FileDialog.getOpenFileName(None, title, dir=defaultDir, filter=filter)
+    return Path(file).absolute()
+
+
+def browse_save_file(defaultDir=QDir.currentPath(), title="Save File...", setmode=QFileDialog.FileMode.AnyFile, filter='All Files (*)'):
+    FileDialog = QFileDialog()
+    FileDialog.setFileMode(setmode)
+    file, _ = FileDialog.getSaveFileName(None, title, dir=defaultDir, filter=filter)
     return Path(file).absolute()
 
 
