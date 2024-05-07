@@ -163,7 +163,6 @@ config.yaml
 db_table_example.xlsx
 db/**
 UI/resources
-UI/base_qt_ui/icons
 .idea
 init_log.log
 logs/**
